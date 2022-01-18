@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+#banner{
+    position:relative;
+    padding-left:0.5%;
+    padding-right: 0.5%;
+    padding-top:1%;
+    padding-bottom: 20%;
+  }
+
+#div-img-portada{
+    background-color: rgb(231, 182, 108);
+}
+
+#div-persona {
+    position: absolute;
+    left: 2%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+#img-persona{
+    max-width: 200px;
+}
+
+#AcercaDe{
+    padding-top:7%;
+}
+
+.seccion{
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
