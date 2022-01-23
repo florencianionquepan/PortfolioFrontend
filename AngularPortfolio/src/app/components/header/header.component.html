@@ -1,24 +1,27 @@
-<p> header works! </p>
 
-<div id="banner" class="border border-4 bg-dark text-white bg-opacity-90">
+<div id="banner" class="border border-4 bg-dark text-white">
     <div id='div-img-portada' class="text-center">
-      <img src ="../../assets/gatitos.jpg" class="img rounded img-fluid" id='img-portada'alt ="gatitos bebes">
+      <img [src] ="miPortfolio.backImage" class="img rounded img-fluid" id='img-portada'alt ="gatitos bebes">
     </div>
     <div id='div-persona' class="row">
       <div class="col-3">
-        <div id='div-img-persona'> 
-          <img src="../../assets/imagen.jpeg" class="img-fluid rounded-circle" id='img-persona'>
+        <div id='div-img-persona' class='text-center'> 
+          <img srcset="../../assets/imagen90w.jpg 90w,
+          ../../assets/imagen160w.jpg 160w,
+          ../../assets/imagen230w.jpg 230w"
+     sizes="(max-width: 90px) 90px,
+            (max-width: 160px) 160px,
+            230px"
+     src="../../assets/imagen230w.jpg" alt="foto de perfil" class="img-fluid rounded-circle" id='img-persona'>
+          <!--img src="../../assets/imagen.jpg" class="img-fluid rounded-circle" id='img-persona'-->
             <button type="button" class="btn btn-primary btn-sm d-none d-sm-block" id='cambiarFoto'>✏</button>
         </div>
       </div>
       <div class="col-9">
-        <h2>Florencia Ñonquepan</h2>
-        <h3>FullStack Developer Junior</h3>
+        <h2>{{miPortfolio.name}}</h2>
+        <h3>{{miPortfolio.position}}</h3>
+        <h3>{{miPortfolio.ubication}}</h3>
         <button type="button" class="btn btn-primary"> Tengo interes en </button>
-        <h2>Acerca de mi</h2>
-        <p>
-          Blablabla, blablablablabla, tilin, tilin, pppppppppsssssssssssssssssssssssss
-        </p>
       </div>
     </div>
   </div>

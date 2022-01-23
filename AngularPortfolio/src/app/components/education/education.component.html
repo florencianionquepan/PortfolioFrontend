@@ -1,0 +1,22 @@
+
+<div class="border border-4 bg-dark text-white bg-opacity-90">
+    <h1> Educación </h1>
+    <ul>
+        <li *ngFor="let education of educationList">
+            <div class='container'>
+                <img class="rounded" 
+                    [src]="education.img"/>
+            </div>
+            <div class="row">
+                <div>
+                    <h3>{{education.school}}</h3>
+                    <p>{{education.career}}</p>
+                    <h4> {{education.start}} {{education.end}}</h4>
+                </div>
+            </div>
+
+
+        </li>
+    </ul>
+    <p>2021-Actualidad Universidad Nacional del Comahue - Tecnicatura Universitaria en Desarrollo Web 2010-2016 Universidad Nacional del Sur - Ingeniería química</p>
+</div>
