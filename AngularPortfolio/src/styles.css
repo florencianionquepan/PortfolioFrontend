@@ -1,28 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-#div-img-portada{
+.background{
     background-color: rgb(1, 1, 0);
 }
-#img-portada{
-    max-height: 250px;
-}
-
-
-#div-img-persona {
-    margin-top:-40%;
-  }
-
-
-#AcercaDe{
-    padding-top:7%;
-}
-
-#cambiarFoto{
-    position:absolute;
-    left: 20%;
-    top:73%;
-}
-
-
 

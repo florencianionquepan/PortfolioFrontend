@@ -1,11 +1,12 @@
 
-<div class="border border-4 bg-dark text-white bg-opacity-90">
+<div class="border border-4 text-white background">
     <h1> Educación </h1>
     <ul>
         <li *ngFor="let education of educationList">
             <div class='container'>
                 <img class="rounded" 
-                    [src]="education.img"/>
+                    [src]="education.img"
+                    height ="80" width="80"/>
             </div>
             <div class="row">
                 <div>

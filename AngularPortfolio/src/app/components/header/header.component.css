@@ -1,0 +1,24 @@
+#img-portada{
+    max-height: 400px;
+}
+#img-persona {
+    margin-top:-50%;
+  }
+#acerca-de{
+    background-color: transparent;
+}
+#datos{
+    text-align: left;
+    margin-top:-10%;
+    margin-bottom: 2%;
+}
+
+#cambiarFoto {
+    margin-top:-3%;
+    margin-left:70%;
+}
+
+#editar-datos{
+    margin-top:-16%;
+    margin-left: 90%;
+}
