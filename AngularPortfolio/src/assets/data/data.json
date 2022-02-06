@@ -14,26 +14,40 @@
         "url":"#"
     },
     "ubication":"Neuquen",
-    "about":"Ingeniera química estudiando desarrollo web",
+    "about":"Ingeniera química estudiando desarrollo web. También practico spinning y yoga. ",
     "experience":[{
-        "position":"ingeniera de procesos",
+        "position":"Ingeniera de procesos",
         "company":"Tepsi",
         "start":"jun 2018",
         "end":"aug 2019",
-        "timeElapsed":"un año y un mes"
+        "tareas":"Relevamiento de plantas, ingeniería básica y de detalle de proyectos, simulación en softwares de procesos, diseño de equipos, seguimiento del proyecto con clientes"
+    },
+    {
+        "position":"Ingeniera en oficina técnica en CPF Sierras Blancas (Shell)",
+        "company":"Zille",
+        "start":"aug 2019",
+        "end":"aug 2020",
+        "tareas":"Revisión y control de ingeniería, control de cambios del proyecto, intermediario entre cliente y proveedores, asistencia tècnica a supervisores"
+    },
+    {
+        "position":"Control documental para Pampa Energía",
+        "company":"CIAR",
+        "start":"sept 2021",
+        "end":"Actualidad",
+        "tareas":"Control de ingeniería de planta de gas"
     }],
     "education":[{
-        "school":"UNS",
-        "title":"ingeniera quimica",
-        "career":"ingenieria quimica",
+        "school":"Universidad Nacional del Sur",
+        "title":"Ingeniera Quimica",
+        "career":"Ingenieria Quimica",
         "start":"2010",
         "end":"2016",
         "img":"https://www.cienciasdelaadministracion.uns.edu.ar/wp-content/themes/enlighten-pro/images/logo-uns.png"
     },
     {
         "school":"UNCo",
-        "title":"TUDW",
-        "career":"TUDW",
+        "title":"Tecnica Universitaria en Desarrollo Web",
+        "career":"Tecnicatura Universitaria en Desarrollo Web",
         "start":"2021",
         "end":"2023",
         "img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.uncoma.edu.ar%2F&psig=AOvVaw0Ti7fNZpESF3VcznAaCVL5&ust=1643913600912000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLC7rsXV4fUCFQAAAAAdAAAAABAD"
