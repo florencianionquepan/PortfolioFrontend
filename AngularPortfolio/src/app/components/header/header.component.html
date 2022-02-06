@@ -17,7 +17,7 @@
       <img [src] ="miPortfolio.backImage" class="img rounded img-fluid" id='img-portada'alt ="gatos">
       <button type="button" class="d-none d-md-block" id='cambiar-portada'><fa-icon [icon]="faCameraRetro"></fa-icon></button>
   <div id='acerca-de' class="row">
-      <div class="col-4">
+      <div class="col-4 border">
         <img srcset="../../assets/imagen90w.jpg 90w,
           ../../assets/imagen160w.jpg 160w,
           ../../assets/imagen230w.jpg 230w"
@@ -26,14 +26,19 @@
             230px"
      src="../../assets/imagen230w.jpg" alt="foto de perfil" class="img-fluid rounded-circle" id='img-persona'>
           <!--img src="../../assets/imagen.jpg" class="img-fluid rounded-circle" id='img-persona'--> 
-          <button type="button" class="d-none d-md-block" id='cambiarFoto'><fa-icon [icon]="faCameraRetro"></fa-icon></button> 
+          <button type="button" class="d-none d-md-block" id='cambiar-foto'><fa-icon [icon]="faCameraRetro"></fa-icon></button> 
       </div>
-      <div class="col-8" id='datos'>
-        <h2>{{miPortfolio.name}}</h2>
-        <h3>{{miPortfolio.position}}</h3>
-        <h3>{{miPortfolio.ubication}}</h3>
-        <button type="button" class="btn btn-primary"> Tengo interes en </button>
-        <button type='button' class="d-none d-md-block" id='editar-datos'><fa-icon [icon]="faUserEdit"></fa-icon></button>
+      <div class="col-8 border" id='datos'>
+        <div class="row">
+          <div class="col-11">
+            <h2>Hola! Me llamo {{miPortfolio.name}}</h2>
+          </div>
+          <div class="col-1">
+            <button type='button' class="d-none d-md-block" id='editar-datos'><fa-icon [icon]="faUserEdit"></fa-icon></button>
+          </div>
+        </div>
+        <h4>Actualmente estoy en busqueda activa para la posición {{miPortfolio.position}}</h4>
+        <h4>Vivo en {{miPortfolio.ubication}}</h4>
       </div>
     </div>
 </div>
