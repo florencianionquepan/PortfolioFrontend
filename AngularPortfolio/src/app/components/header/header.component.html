@@ -1,5 +1,21 @@
-<div id='div-portada' class="border border-4 text-center text-white background">
+<nav class="site-header sticky-top py-1 border border-2">
+  <div class="container d-flex flex-column flex-md-row justify-content-between flex-md-row align-items-center">
+    <a class="navbar-brand my-0 mr-md-auto" href="#">
+      <img src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1" 
+      style="width:200px;">
+    </a>
+    <ul class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-white" h-ref="https://github.com/florencianionquepan"> Educacion </a>
+      <a class="p-2 text-white" h-ref="#"> Experiencia </a>
+      <a class="p-2 text-white" h-ref="#"> Proyectos </a>
+      <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </ul>
+  </div>
+</nav>
+
+<div id='div-portada' class="border border-3 text-center text-white background">
       <img [src] ="miPortfolio.backImage" class="img rounded img-fluid" id='img-portada'alt ="gatos">
+      <button type="button" class="d-none d-md-block" id='cambiar-portada'><fa-icon [icon]="faCameraRetro"></fa-icon></button>
   <div id='acerca-de' class="row">
       <div class="col-4">
         <img srcset="../../assets/imagen90w.jpg 90w,
