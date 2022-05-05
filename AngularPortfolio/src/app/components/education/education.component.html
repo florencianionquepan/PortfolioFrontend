@@ -1,7 +1,18 @@
 
 <div class="border border-4 text-white background">
-    <h1> Educación </h1>
+    <div class="row">
+        <div class="col-11">
+            <h1> Educación </h1>
+        </div>
+        <div class="col-1">
+            <button type='button' class="d-none d-md-block" (click)="editEducation(educationList)">
+                <fa-icon [icon]="faPlus">
+                </fa-icon>
+              </button>
+        </div>
+    </div>
 
+    <div class="row">
         <div *ngFor="let education of educationList">
             <div class='row'>
                 <div class="col-2 text-center"> 
@@ -10,11 +21,24 @@
                     height ="60" width="60"/>
                     <p> {{education.start}} {{education.end}}</p>
                 </div>
-                <div class="col-10"> 
+                <div class="col-8"> 
                     <h3>{{education.school}}</h3>
                     <p>{{education.career}}</p>
                 </div>
+                <div class="col-1">
+                    <button type="button" class="d-none d-md-block" id="pen">
+                        <fa-icon [icon]="faPen">
+                        </fa-icon>
+                    </button>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="d-none d-md-block">
+                        <fa-icon [icon]="faTrash">
+                        </fa-icon>
+                    </button>
+                </div>
             </div>
         </div>
-
+    </div>
+        
 </div>

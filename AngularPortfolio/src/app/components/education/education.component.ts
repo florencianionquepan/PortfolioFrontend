@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faTrashAlt , faPlus,faPen } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-education',
@@ -7,6 +9,12 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent implements OnInit {
+
+
+  faPlus = faPlus;
+  faPen=faPen;
+  faTrash= faTrashAlt;
+
   educationList:any;
   constructor(private datosPortfolio:PortfolioService) { }
 
@@ -16,4 +24,10 @@ export class EducationComponent implements OnInit {
     })
   }
 
+  editEducation(educationList:any){
+    console.log(educationList);
+  }
+
 }
+
+
