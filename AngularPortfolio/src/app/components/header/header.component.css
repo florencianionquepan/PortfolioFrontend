@@ -1,30 +1,33 @@
 #div-portada{
     position: relative;
 }
+#div-img-fondo{
+    height: 400px;
+}
 
 #acerca-de{
     background-color: transparent;
 }
 #datos{
     text-align: left;
-    padding-bottom:1%;
+    margin-top:4%;
 }
 #img-portada{
-    max-height: 400px;
+    height: 400px;
 }
-#img-persona{
-    margin-top:-30%;
+#div-img-persona{
+    position: relative;
+    bottom:50px;
 }
 #cambiar-foto{
     margin-top:-5%;
     margin-left: 70%;
 }
 
-
 #cambiar-portada{
-    position:absolute;
-    top:3%;
-    right: 1%;
+    position: absolute;
+    bottom: 90%;
+    left: 90%;
 }
 
 .links{

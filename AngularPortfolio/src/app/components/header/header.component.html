@@ -13,31 +13,31 @@
 </div>
 
 <div id='div-portada' class="border border-3 text-center text-white background">
-      <img [src] ="miPortfolio.backImage" class="img rounded img-fluid" id='img-portada'alt ="gatos">
+  <div id="div-img-fondo">
+    <img [src] ="miPortfolio.persona.urlFondo" class="img rounded img-fluid" id='img-portada'alt ="gatos">
+  </div>
       <button type="button" class="d-none d-md-block" id='cambiar-portada'><fa-icon [icon]="faCameraRetro"></fa-icon></button>
   <div id='acerca-de' class="row">
-      <div class="col-4 border">
+      <div class="col-4" id="div-img-persona">
         <img srcset="../../assets/imagen90w.jpg 90w,
           ../../assets/imagen160w.jpg 160w,
           ../../assets/imagen230w.jpg 230w"
      sizes="(max-width: 90px) 90px,
             (max-width: 160px) 160px,
             230px"
-     src="../../assets/imagen230w.jpg" alt="foto de perfil" class="img-fluid rounded-circle" id='img-persona'>
+     [src]="miPortfolio.persona.urlFoto" alt="fotoPerfil" class="img-fluid rounded-circle" id='img-persona'>
           <!--img src="../../assets/imagen.jpg" class="img-fluid rounded-circle" id='img-persona'--> 
           <button type="button" class="d-none d-md-block" id='cambiar-foto'><fa-icon [icon]="faCameraRetro"></fa-icon></button> 
       </div>
-      <div class="col-8 border" id='datos'>
-        <div class="row">
-          <div class="col-11">
-            <h2>Hola! Me llamo {{miPortfolio.name}}</h2>
-          </div>
-          <div class="col-1">
-            <button type='button' class="d-none d-md-block" id='editar-datos'><fa-icon [icon]="faUserEdit"></fa-icon></button>
-          </div>
-        </div>
-        <h4>Actualmente estoy en busqueda activa para la posición {{miPortfolio.position}}</h4>
-        <h4>Vivo en {{miPortfolio.ubication}}</h4>
+      <div class="col-7" id='datos'>
+        <h2>Hola! Me llamo {{miPortfolio.persona.nombre}} {{miPortfolio.persona.apellido}}</h2>
+        <h5>Actualmente estoy en busqueda activa para la posición {{miPortfolio.persona.posicion}}</h5>
+        <h5>Vivo en {{miPortfolio.persona.ubicacion}}</h5>
+        <h5>Mi telefono: {{miPortfolio.persona.telefono}}</h5>
+        <h5>Mi mail: {{miPortfolio.persona.mail}}</h5>
+      </div>
+      <div class="col-1">
+        <button type='button' class="d-none d-md-block"><fa-icon [icon]="faUserEdit"></fa-icon></button>
       </div>
     </div>
 </div>
