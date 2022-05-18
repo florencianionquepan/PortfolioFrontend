@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faUserEdit }from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-
+  faUserEdit = faUserEdit;
   miPortfolio:any;
   constructor(private datosPortfolio:PortfolioService ) { }
 
