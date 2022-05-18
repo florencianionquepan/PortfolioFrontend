@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TechnologyComponent } from './components/technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EducationComponent,
     ProjectsComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    TechnologyComponent
   ],
   imports: [
     BrowserModule,
