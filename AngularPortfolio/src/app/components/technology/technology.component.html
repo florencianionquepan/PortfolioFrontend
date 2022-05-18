@@ -1,0 +1,23 @@
+<div class="border border-4 text-white background" id="componente">
+    <div class="row">
+        <div class="col-11">
+            <h2> Tecnologias </h2>
+        </div>
+        <div class="col-1">
+            <button class="d-none d-md-block">
+                <fa-icon [icon]="faPlus"></fa-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row" id="tecnologias">
+        <div *ngFor="let tecnologia of tecnologiaLista">
+            <div class="col-1 text-center" id="foto"> 
+                <h5>{{tecnologia.nombre}}</h5>
+                <img class="rounded" 
+                [src]="tecnologia.logo"
+                height="50"/>
+                <p> </p>
+            </div>
+        </div>
+    </div>
+</div>

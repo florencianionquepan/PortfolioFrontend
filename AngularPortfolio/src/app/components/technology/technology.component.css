@@ -1,0 +1,13 @@
+#tecnologias{
+    display : inline;
+}
+
+#foto{
+    position: relative;
+    float:left;
+}
+
+#componente{
+    height: 250px;
+    padding-left:0.5%;
+}
