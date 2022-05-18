@@ -18,4 +18,8 @@ export class TechnologyComponent implements OnInit {
       this.tecnologiaLista=data.tecnologia;
     });
   }
+
+  nueva(){
+    
+  }
 }

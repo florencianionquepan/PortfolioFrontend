@@ -8,6 +8,16 @@
 }
 
 #componente{
-    height: 250px;
+    height: 450px;
     padding-left:0.5%;
+}
+
+#agregar{
+    display: none;
+}
+
+
+form{
+    size: 50px;
+    margin:5px;
 }
