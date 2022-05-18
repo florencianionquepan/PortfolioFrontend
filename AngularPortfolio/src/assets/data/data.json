@@ -1,45 +1,122 @@
 {
-    "name":"Florencia Ñonquepan",
-    "backImage":"https://beanimalheroes.org/wp-content/uploads/2020/10/cmontanyes41977321-para-portada-onbarcelona-num-cute-muzzle-black-181030161849-1540912884734-1200x480.jpg",
-    "image":"https://scontent.faep9-3.fna.fbcdn.net/v/t1.6435-9/122601576_4916348845049518_7100240958192080149_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=WLZ7P6GoBUcAX9UmEQH&tn=C4mIPvLQD7NDTzLJ&_nc_ht=scontent.faep9-3.fna&oh=00_AT_-OD4fJOmhdFevTOUkz7hTriik2wIncDkwbLth6cqOqQ&oe=621196C9",
-    "position":"Full Stack Developer",
-    "ubication":"Neuquen",
-    "about":"Ingeniera química estudiando desarrollo web. También practico spinning y yoga. ",
-    "experience":[{
-        "position":"Ingeniera de procesos",
-        "company":"Tepsi",
-        "start":"jun 2018",
-        "end":"aug 2019",
-        "tareas":"Relevamiento de plantas, ingeniería básica y de detalle de proyectos, simulación en softwares de procesos, diseño de equipos, seguimiento del proyecto con clientes"
+    "usuario":{
+        "id":1,
+        "nombreUsuario":"florencianionquepan",
+        "contrasenia":"nionquepanprograma394"
+    },
+    "persona":{
+        "id":1,
+        "nombre":"Florencia",
+        "apellido":"Ñonquepan",
+        "fechaNac":"01/09/1991",
+        "nacionalidad":"Argentina",
+        "ubicacion":"Neuquen, Argentina",
+        "telefono":"2914143822",
+        "mail":"florencianionquepan@outlook.com",
+        "posicion":"Full Stack Developer",
+        "sobreMi":"Ingeniera química estudiando desarrollo web. También practico spinning y yoga. ",
+        "urlFoto":"https://scontent.faep9-3.fna.fbcdn.net/v/t1.6435-9/122601576_4916348845049518_7100240958192080149_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=WLZ7P6GoBUcAX9UmEQH&tn=C4mIPvLQD7NDTzLJ&_nc_ht=scontent.faep9-3.fna&oh=00_AT_-OD4fJOmhdFevTOUkz7hTriik2wIncDkwbLth6cqOqQ&oe=621196C9",
+        "urlFondo":"https://beanimalheroes.org/wp-content/uploads/2020/10/cmontanyes41977321-para-portada-onbarcelona-num-cute-muzzle-black-181030161849-1540912884734-1200x480.jpg"
+    },    
+    "experienciaLaboral":[
+    {
+        "id":1,
+        "nombreEmpresa":"Trace Group S.A.",
+        "posicion":"Control documental para Pampa Energía",
+        "esTrabajoActual":true,
+        "fechaInicio":"sept 2021",
+        "fechaFin":"Actualidad",
+        "descripcion":"Control de ingeniería de planta de gas",
+        "urlFoto":"https://tracegroup.com.ar/site/wp-content/uploads/2019/09/201907_logo_color_TG_rev01.png"
     },
     {
-        "position":"Ingeniera en oficina técnica en CPF Sierras Blancas (Shell)",
-        "company":"Zille",
-        "start":"aug 2019",
-        "end":"aug 2020",
-        "tareas":"Revisión y control de ingeniería, control de cambios del proyecto, intermediario entre cliente y proveedores, asistencia tècnica a supervisores"
+        "id":2,
+        "nombreEmpresa":"Zille",
+        "posicion":"Ingeniera en oficina técnica en CPF Sierras Blancas (Shell)",
+        "esTrabajoActual":false,
+        "fechaInicio":"aug 2019",
+        "fechaFin":"aug 2020",
+        "descripcion":"Revisión y control de ingeniería, control de cambios del proyecto, intermediario entre cliente y proveedores, asistencia tècnica a supervisores",
+        "urlFoto":"http://www.zillesrl.com.ar/images/logo-zille.png"
     },
     {
-        "position":"Control documental para Pampa Energía",
-        "company":"CIAR",
-        "start":"sept 2021",
-        "end":"Actualidad",
-        "tareas":"Control de ingeniería de planta de gas"
+        "id":3,
+        "nombreEmpresa":"Tepsi",
+        "posicion":"Ingeniera de procesos",
+        "esTrabajoActual":false,
+        "fechaInicio":"jun 2018",
+        "fechaFin":"aug 2019",
+        "descripcion":"Relevamiento de plantas, ingeniería básica y de detalle de proyectos, simulación en softwares de procesos, diseño de equipos, seguimiento del proyecto con clientes",
+        "urlFoto":"https://www.grupotepsi.com/wp-content/uploads/2022/05/Tepsi-Logo-x26.png"
+    }
+    ],
+    "educacion":[
+        {
+            "id":1,
+            "nombreUniversidad":"Universidad Nacional del Comahue",
+            "ubicacion":"Neuquen, Neuquen, Argentina",
+            "titulo":"Tecnicatura Universitaria en Desarrollo Web",
+            "finalizado":false,
+            "fechaInicio":"2021",
+            "fechaFin":"2023",
+            "urlFoto":"https://www.uncoma.edu.ar/wp-content/uploads/2018/10/Universidad-Nacional-del-Comahue-OFICIAL-Blanco-e1540911359350.png"
+        },
+            {
+            "id":2,
+            "nombreUniversidad":"Universidad Nacional del Sur",
+            "ubicacion":"Bahia Blanca, Buenos Aires, Argentina",
+            "titulo":"Ingenieria Quimica",
+            "finalizado":true,
+            "fechaInicio":"2010",
+            "fechaFin":"2016",
+            "urlFoto":"https://www.cienciasdelaadministracion.uns.edu.ar/wp-content/themes/enlighten-pro/images/logo-uns.png"
+        }
+    ],
+    "proyecto":[{
+
     }],
-    "education":[{
-        "school":"Universidad Nacional del Sur",
-        "title":"Ingeniera Quimica",
-        "career":"Ingenieria Quimica",
-        "start":"2010",
-        "end":"2016",
-        "img":"https://www.cienciasdelaadministracion.uns.edu.ar/wp-content/themes/enlighten-pro/images/logo-uns.png"
-    },
-    {
-        "school":"UNCo",
-        "title":"Tecnica Universitaria en Desarrollo Web",
-        "career":"Tecnicatura Universitaria en Desarrollo Web",
-        "start":"2021",
-        "end":"2023",
-        "img":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.uncoma.edu.ar%2F&psig=AOvVaw0Ti7fNZpESF3VcznAaCVL5&ust=1643913600912000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLC7rsXV4fUCFQAAAAAdAAAAABAD"
-    }]
+    "tecnologia":[
+        {
+            "id":1,
+            "nombre":"HTML",
+            "aniosExperiencia":1,
+            "logo":""
+        },
+        {
+            "id":2,
+            "nombre":"CSS",
+            "aniosExperiencia":1,
+            "logo":""
+        },
+        {
+            "id":3,
+            "nombre":"Javascript",
+            "aniosExperiencia":1,
+            "logo":""
+        },
+        {
+            "id":4,
+            "nombre":"Javascript",
+            "aniosExperiencia":1,
+            "logo":""
+        },
+        {
+            "id":5,
+            "nombre":"Java",
+            "aniosExperiencia":0,
+            "logo":""
+        },
+        {
+            "id":6,
+            "nombre":"Angular",
+            "aniosExperiencia":0,
+            "logo":""
+        },
+        {
+            "id":7,
+            "nombre":"PHP",
+            "aniosExperiencia":0,
+            "logo":""
+        }
+    ]
 }
