@@ -13,36 +13,35 @@
     </div>
 
 
-<div class="row">
+    <div class="row">
+        <div *ngFor="let experiencia of experienciaLista">
+            <div class='row'>
+                <div class="col-2 text-center" id="foto"> 
+                    <img class="rounded" 
+                    [src]="experiencia.urlFoto"
+                    width ="100"/>
+                    <p> {{experiencia.fechaInicio}}-{{experiencia.fechaFin}}</p>
+                </div>
 
-</div>
-    <div *ngFor="let experiencia of experienciaLista">
-        <div class='row'>
-            <div class="col-2 text-center" id="foto"> 
-                <img class="rounded" 
-                [src]="experiencia.urlFoto"
-                width ="100"/>
-                <p> {{experiencia.fechaInicio}}-{{experiencia.fechaFin}}</p>
-            </div>
+                <div class="col-8"> 
+                    <h3>{{experiencia.posicion}}</h3>
+                    <h4>{{experiencia.nombreEmpresa}}</h4>
+                    <p>{{experiencia.descripcion}}</p>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="d-none d-md-block" id="pen" (click)="editExperiencia(experienciaLista)">
+                        <fa-icon [icon]="faPen">
+                        </fa-icon>
+                    </button>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="d-none d-md-block" (click)="borrarExperiencia(experienciaLista)">
+                        <fa-icon [icon]="faTrash">
+                        </fa-icon>
+                    </button>
+                </div>
 
-            <div class="col-8"> 
-                <h3>{{experiencia.posicion}}</h3>
-                <h4>{{experiencia.nombreEmpresa}}</h4>
-                <p>{{experiencia.descripcion}}</p>
             </div>
-            <div class="col-1">
-                <button type="button" class="d-none d-md-block" id="pen" (click)="editExperiencia(experienciaLista)">
-                    <fa-icon [icon]="faPen">
-                    </fa-icon>
-                </button>
-            </div>
-            <div class="col-1">
-                <button type="button" class="d-none d-md-block" (click)="borrarExperiencia(experienciaLista)">
-                    <fa-icon [icon]="faTrash">
-                    </fa-icon>
-                </button>
-            </div>
-
         </div>
-    </div>
+    </div>    
 </div>
