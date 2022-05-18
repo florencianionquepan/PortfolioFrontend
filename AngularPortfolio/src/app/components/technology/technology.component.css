@@ -8,7 +8,9 @@
 }
 
 #componente{
-    height: 450px;
+    width: 100%;
+    position: absolute;
+    height: auto;
     padding-left:0.5%;
 }
 
