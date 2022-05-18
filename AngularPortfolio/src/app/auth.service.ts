@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 })
 
 export class AuthService {
-  uri='http://localhost:3000/api'; //la url que corresponda en cada caso
+  uri='http:///localhost:3306/portfoliodb'; //la url que corresponda en cada caso
   token: any;
 
   constructor(private http:HttpClient,private router: Router) { }
