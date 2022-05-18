@@ -2,10 +2,10 @@
 <div class="border border-4 text-white background">
     <div class="row">
         <div class="col-11">
-            <h1> Educación </h1>
+            <h2> Educación </h2>
         </div>
         <div class="col-1">
-            <button type='button' class="d-none d-md-block" (click)="editEducation(educationList)">
+            <button type='button' class="d-none d-md-block" (click)="editEducation(educacionLista)">
                 <fa-icon [icon]="faPlus">
                 </fa-icon>
               </button>
@@ -13,17 +13,19 @@
     </div>
 
     <div class="row">
-        <div *ngFor="let education of educationList">
+        <div *ngFor="let educacion of educacionLista">
             <div class='row'>
+
                 <div class="col-2 text-center"> 
                     <img class="rounded" 
-                    [src]="education.img"
+                    [src]="educacion.urlFoto"
                     height ="60" width="60"/>
-                    <p> {{education.start}} {{education.end}}</p>
+                    <p> {{educacion.fechaInicio}}-{{educacion.fechaFin}}</p>
                 </div>
+
                 <div class="col-8"> 
-                    <h3>{{education.school}}</h3>
-                    <p>{{education.career}}</p>
+                    <h3>{{educacion.nombreUniversidad}}</h3>
+                    <h4>{{educacion.titulo}}</h4>
                 </div>
                 <div class="col-1">
                     <button type="button" class="d-none d-md-block" id="pen">
@@ -37,6 +39,7 @@
                         </fa-icon>
                     </button>
                 </div>
+
             </div>
         </div>
     </div>

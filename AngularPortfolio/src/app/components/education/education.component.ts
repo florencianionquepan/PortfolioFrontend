@@ -15,17 +15,17 @@ export class EducationComponent implements OnInit {
   faPen=faPen;
   faTrash= faTrashAlt;
 
-  educationList:any;
+  educacionLista:any;
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.educationList=data.education;
+      this.educacionLista=data.educacion;
     })
   }
 
-  editEducation(educationList:any){
-    console.log(educationList);
+  editEducation(educacionLista:any){
+    console.log(educacionLista);
   }
 
 }
