@@ -5,7 +5,7 @@
         "contrasenia":"nionquepanprograma394"
     },
     "persona":{
-        "id":1,
+        "idPersona":1,
         "nombre":"Florencia",
         "apellido":"Ñonquepan",
         "fechaNac":"01/09/1991",
@@ -15,7 +15,7 @@
         "mail":"florencianionquepan@outlook.com",
         "posicion":"Full Stack Developer",
         "sobreMi":"Ingeniera química estudiando desarrollo web. También practico spinning y yoga. ",
-        "urlFoto":"https://scontent.faep9-3.fna.fbcdn.net/v/t1.6435-9/122601576_4916348845049518_7100240958192080149_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=WLZ7P6GoBUcAX9UmEQH&tn=C4mIPvLQD7NDTzLJ&_nc_ht=scontent.faep9-3.fna&oh=00_AT_-OD4fJOmhdFevTOUkz7hTriik2wIncDkwbLth6cqOqQ&oe=621196C9",
+        "urlFoto":"https://media-exp1.licdn.com/dms/image/C4E03AQHSwL3tusAv3g/profile-displayphoto-shrink_200_200/0/1643742831459?e=1658966400&v=beta&t=EHyqyTCMW0HP2WelIZ0ElRDMTFLvWdWbfUsXv__cmoc",
         "urlFondo":"https://beanimalheroes.org/wp-content/uploads/2020/10/cmontanyes41977321-para-portada-onbarcelona-num-cute-muzzle-black-181030161849-1540912884734-1200x480.jpg"
     },    
     "experienciaLaboral":[
