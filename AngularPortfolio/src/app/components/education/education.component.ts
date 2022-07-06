@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faTrashAlt , faPlus,faPen } from '@fortawesome/free-solid-svg-icons';
-
+import { Educacion } from 'src/app/models/educacion';
+import { EducationService } from 'src/app/services/education.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-education',
@@ -15,18 +16,27 @@ export class EducationComponent implements OnInit {
   faPen=faPen;
   faTrash= faTrashAlt;
 
-  educacionLista:any;
-  constructor(private datosPortfolio:PortfolioService) { }
+  public educacionLista:Educacion[]=[];
+  
+  constructor(private educationService:EducationService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.educacionLista=data.educacion;
+    this.verEducacion();
+  }
+
+  public verEducacion():void{
+    this.educationService.verEducacion().subscribe({
+      next:(Response:Educacion[])=>{
+        this.educacionLista=Response;
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+      }
+      
     })
   }
 
-  editEducation(educacionLista:any){
-    console.log(educacionLista);
-  }
+
 
 }
 
