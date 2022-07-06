@@ -4,7 +4,6 @@ import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 import { faUserEdit }from '@fortawesome/free-solid-svg-icons';
 import { Persona } from 'src/app/models/persona';
 import { HeaderService } from 'src/app/services/header.service';
-import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-header',
@@ -40,7 +39,7 @@ export class HeaderComponent implements OnInit {
         console.log(this.Persona);
       },
       error:(error:HttpErrorResponse)=>{
-        alert(error.message);
+        console.log(error.message);
       }
     })
   }
