@@ -3,6 +3,8 @@ import { faTrashAlt , faPlus,faPen } from '@fortawesome/free-solid-svg-icons';
 import { Educacion } from 'src/app/models/educacion';
 import { EducationService } from 'src/app/services/education.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-education',
@@ -17,7 +19,9 @@ export class EducationComponent implements OnInit {
   faTrash= faTrashAlt;
 
   public educacionLista:Educacion[]=[];
-  
+  public modificarEducacion:Educacion | undefined;
+  public eliminarEducacion:Educacion | undefined;
+
   constructor(private educationService:EducationService) { }
 
   ngOnInit(): void {
@@ -36,8 +40,63 @@ export class EducationComponent implements OnInit {
     })
   }
 
+  public onOpenModal(mode:String, educacion?:Educacion):void{
+    const container=document.querySelector('#main-component');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal'); 
+    if(mode==='agregar'){
+      button.setAttribute('data-toggle', '#agregarEducacionModal');
+    }else if(mode==='eliminar'){
+      this.eliminarEducacion=educacion;
+      button.setAttribute('data-toggle', '#eliminarEducacionModal');
+    }else if(mode=='modificar'){
+      this.modificarEducacion=educacion;
+      button.setAttribute('data-toggle', '#modificarEducacionModal');
+    }
+    container?.appendChild(button);
+    button.click;
+  }
 
+  public onAgregarEducacion(addForm:NgForm){
+    document.getElementById('agregar-educacion-form')?.click();
+    this.educationService.agregarEducacion(addForm.value).subscribe({
+      next:(response:Educacion)=>{
+        console.log(response);
+        this.verEducacion();
+        addForm.reset();
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+        addForm.reset();
+      }
+    })
+  }
 
+  public onModificarEducacion(educacion:Educacion){
+    this.modificarEducacion=educacion;
+    this.educationService.modificarEducacion(educacion).subscribe({
+      next:(response:Educacion)=>{
+        console.log(response);
+        this.verEducacion();
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+      }
+    })
+  }
+
+  public onEliminarEducacion(idEdu:number):void{
+    this.educationService.borrarEducacion(idEdu).subscribe({
+      next:(response:void)=>{
+        console.log(response);
+        this.verEducacion();
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+      }
+    })
+  }
 }
 
 
