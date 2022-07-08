@@ -15,16 +15,9 @@ export class HeaderComponent implements OnInit {
   faUserEdit = faUserEdit;
   
   public Persona:any | undefined;
-  public editPersona:Persona | undefined;
+  public modificarPersona:Persona | undefined;
   miPortfolio:any;
-/*   constructor(private datosPortfolio:PortfolioService) { }
 
-  ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      console.log(data);
-      this.miPortfolio=data;
-    });
-  } */
 
   constructor (private headerService:HeaderService){}
 
@@ -36,7 +29,7 @@ export class HeaderComponent implements OnInit {
     this.headerService.verPersona().subscribe({
       next:(response:any)=>{
         this.Persona=response[0];
-        console.log(this.Persona);
+        //console.log(this.Persona);
       },
       error:(error:HttpErrorResponse)=>{
         console.log(error.message);
@@ -44,4 +37,32 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  public onOpenModal(mode:String,persona?:Persona){
+    const container=document.querySelector('#main-component');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal'); 
+    if(mode=='fotoPortada'){
+      this.modificarPersona=persona;
+      button.setAttribute('data-toggle', '#modificarPortada');
+    }else if(mode=='perfil'){
+      this.modificarPersona=persona;
+      button.setAttribute('data-toggle', '#modificarPerfil');
+    }
+    container?.appendChild(button);
+    button.click;
+  }
+
+  public onModificarPersona(persona:Persona){
+    this.modificarPersona=persona;
+    this.headerService.modificarPersona(persona).subscribe({
+      next:(response:Persona)=>{
+        console.log(response);
+        this.verPersona();
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+      }
+    })
+  }
 }

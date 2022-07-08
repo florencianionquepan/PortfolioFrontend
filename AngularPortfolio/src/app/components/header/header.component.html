@@ -1,43 +1,181 @@
-<div class="border border-3 text-center background border border-2">
-  <div class="container d-flex flex-column flex-md-row justify-content-between flex-md-row align-items-center">
-    <div class="navbar-brand my-0 mr-md-auto">
-      <img src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1" 
-      style="width:200px;">
+<div class="text-center background">
+  <div class="navbar navbar-dark">
+    <div class="navbar-brand my-0">
+      <img class="mx-3 rounded"
+        src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1"
+        style="width:200px;">
     </div>
     <div class="nav-link">
-      <a onclick="window.open('https://github.com/florencianionquepan','_blank')" style="cursor:pointer;" class="links"> Github </a>
-      <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')" style="cursor:pointer;" class="links"> LinkedIn </a>
-      <a class="btn btn-outline-primary" href="iniciar-sesion">Sign up</a>
+      <a onclick="window.open('https://github.com/florencianionquepan','_blank')" style="cursor:pointer; color:#0DCAF0"
+        class="links"> Github </a>
+      <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')"
+        style="cursor:pointer; color:#0DCAF0" class="links me-3"> LinkedIn </a>
+      <a class="btn btn-outline-info me-3" href="iniciar-sesion">Sign up</a>
     </div>
   </div>
 </div>
 
-<div id='div-portada' class="border border-3 text-center text-white background">
-  <div id="div-img-fondo">
-    <img [src] ="Persona?.urlFondo" class="img rounded img-fluid" id='img-portada'alt ="gatos">
+<div id='div-portada' class="text-center text-white-50 background">
+  <div class="row" id="div-img-fondo">
+    <img [src]="Persona?.urlFondo" class="img rounded img-fluid" id='img-portada' alt="gato">
+    <div class="col-11">
+
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
+        data-bs-target="#modificarPortadaModal" (click)="onOpenModal('fotoPortada',Persona)" id='cambiar-portada'>
+        <fa-icon [icon]="faCameraRetro"></fa-icon>
+      </button>
+    </div>
+
   </div>
-      <button type="button" class="d-none d-md-block" id='cambiar-portada'><fa-icon [icon]="faCameraRetro"></fa-icon></button>
+
   <div id='acerca-de' class="row">
-      <div class="col-4" id="div-img-persona">
-        <img srcset="../../assets/imagen90w.jpg 90w,
-          ../../assets/imagen160w.jpg 160w,
-          ../../assets/imagen230w.jpg 230w"
-     sizes="(max-width: 90px) 90px,
-            (max-width: 160px) 160px,
-            230px"
-     [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded-circle" id='img-persona'>
-          <!--img src="../../assets/imagen.jpg" class="img-fluid rounded-circle" id='img-persona'--> 
-          <button type="button" class="d-none d-md-block" id='cambiar-foto'><fa-icon [icon]="faCameraRetro"></fa-icon></button> 
+    <div class="col-4" id="div-img-persona">
+      <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded-circle" id='img-persona'>
+    </div>
+    <div class="col-7" id='datos'>
+      <h2>Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
+      <h5>Actualmente estoy en busqueda activa para la posición {{Persona?.posicion}}</h5>
+      <h5>Vivo en {{Persona?.ubicacion}}</h5>
+      <h5>Mi telefono es {{Persona?.telefono}}</h5>
+      <h5>Mi mail es {{Persona?.mail}}</h5>
+    </div>
+    <div class="col-1">
+      <button type='button' class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
+        data-bs-target="#modificarPerfilModal" (click)="onOpenModal('perfil', Persona)">
+        <fa-icon [icon]="faUserEdit"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--MODIFICAR PORTADA-->
+
+<div class="modal fade" id="modificarPortadaModal" tabindex="-1" aria-labelledby="modificarPortadaModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarPortadaModalLabel"> Editar Foto de portada
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-7" id='datos'>
-        <h2>Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
-        <h5>Actualmente estoy en busqueda activa para la posición {{Persona?.posicion}}</h5>
-        <h5>Vivo en {{Persona?.ubicacion}}</h5>
-        <h5>Mi telefono es {{Persona?.telefono}}</h5>
-        <h5>Mi mail es {{Persona?.mail}}</h5>
-      </div>
-      <div class="col-1">
-        <button type='button' class="d-none d-md-block"><fa-icon [icon]="faUserEdit"></fa-icon></button>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="urlFondo">URL de foto de portada</label>
+            <input type="text" ngModel="{{modificarPersona?.urlFondo}}" name="urlFondo" class="form-control"
+              id="urlFondo">
+          </div>
+          <input type="hidden" ngModel="{{modificarPersona?.idPersona}}" name="idPersona" class="form-control"
+            id="idPersona">
+          <input type="hidden" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control" 
+            id="nombre">
+          <input type="hidden" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
+            id="apellido">
+          <input type="hidden" ngModel="{{modificarPersona?.fechaNac}}" name="fechaNac" class="form-control"
+            id="fechaNac">
+          <input type="hidden" ngModel="{{modificarPersona?.nacionalidad}}" name="nacionalidad" class="form-control"
+            id="nacionalidad">
+          <input type="hidden" ngModel="{{modificarPersona?.ubicacion}}" name="ubicacion" class="form-control"
+            id="ubicacion">
+          <input type="hidden" ngModel="{{modificarPersona?.telefono}}" name="telefono" class="form-control"
+            id="telefono">
+          <input type="hidden" ngModel="{{modificarPersona?.mail}}" name="mail" class="form-control" 
+            id="mail">
+          <input type="hidden" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
+            id="posicion">
+          <input type="hidden" ngModel="{{modificarPersona?.sobreMi}}" name="sobreMi" class="form-control" 
+            id="sobreMi">
+          <input type="hidden" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control" id="urlFoto">
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="onModificarPersona(editForm.value)">Guardar
+              Cambios</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!--MODIFICAR PERFIL-->
+
+<div class="modal fade" id="modificarPerfilModal" tabindex="-1" aria-labelledby="modificarPerfilModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarPerfilModalLabel"> Editar Perfi
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control"
+              id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
+              id="apellido">
+          </div>
+          <div class="form-group">
+            <label for="fechaNac">Fecha de Nacimiento</label>
+            <input type="text" ngModel="{{modificarPersona?.fechaNac}}" name="fechaNac" class="form-control"
+              id="fechaNac">
+          </div>
+          <div class="form-group">
+            <label for="nacionalidad">Nacionalidad</label>
+            <input type="text" ngModel="{{modificarPersona?.nacionalidad}}" name="nacionalidad" class="form-control"
+              id="nacionalidad">
+          </div>
+          <div class="form-group">
+            <label for="ubicacion">Ubicacion</label>
+            <input type="text" ngModel="{{modificarPersona?.ubicacion}}" name="ubicacion" class="form-control"
+              id="ubicacion">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="text" ngModel="{{modificarPersona?.telefono}}" name="telefono" class="form-control"
+              id="telefono">
+          </div>
+          <div class="form-group">
+            <label for="mail">mail</label>
+            <input type="text" ngModel="{{modificarPersona?.mail}}" name="mail" class="form-control"
+              id="mail">
+          </div>
+          <div class="form-group">
+            <label for="urlFoto">URL de foto de perfil</label>
+            <input type="text" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control"
+              id="urlFoto">
+          </div>
+          <div class="form-group">
+            <label for="posicion">Posición</label>
+            <input type="text" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
+              id="posicion">
+          </div>
+
+          <input type="hidden" ngModel="{{modificarPersona?.idPersona}}" name="idPersona" class="form-control"
+            id="idPersona">
+          <input type="hidden" ngModel="{{modificarPersona?.urlFondo}}" name="urlFondo" class="form-control" 
+            id="urlFondo">
+            <input type="hidden" ngModel="{{modificarPersona?.sobreMi}}" name="sobreMi" class="form-control" 
+            id="sobreMi">
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="onModificarPersona(editForm.value)">Guardar
+              Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
