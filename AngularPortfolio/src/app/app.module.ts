@@ -14,6 +14,7 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TechnologyComponent } from './components/technology/technology.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TechnologyComponent } from './components/technology/technology.componen
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
