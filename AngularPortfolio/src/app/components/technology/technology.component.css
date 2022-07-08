@@ -1,25 +1,3 @@
 #tecnologias{
     display : inline;
 }
-
-#foto{
-    position: relative;
-    float:left;
-}
-
-#componente{
-    width: 100%;
-    position: absolute;
-    height: auto;
-    padding-left:0.5%;
-}
-
-#agregar{
-    display: none;
-}
-
-
-form{
-    size: 50px;
-    margin:5px;
-}

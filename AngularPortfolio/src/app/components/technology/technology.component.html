@@ -1,7 +1,7 @@
-<div class="border border-4 text-white background" id="componente">
+<div class="border rounded border-1 text-white-50 background overflow-hidden my-1">
     <div class="row">
         <div class="col-11">
-            <h2> Tecnologias </h2>
+            <h2 class="px-1">Tecnologias </h2>
         </div>
         <div class="col-1">
             <button class="d-none d-md-block" (click)="nueva()">
@@ -10,36 +10,9 @@
         </div>
     </div>
 
-    <form class="row g-3 justify-content-md-center" id="agregar">
-        <div class="row">
-            <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">Nombre de tecnologia</label>
-                <input type="text" class="form-control" size="30">
-              </div>
-              <div class="col-md-2">
-                <label for="inputPassword4" class="form-label">Años de experiencia</label>
-                <input type="number" class="form-control"size="30">
-              </div>
-        </div>
-        <div class="row" style="margin-top: 10px;"> 
-            <div class="col-8">
-                <label for="inputAddress" class="form-label">url de logo</label>
-                <input type="text" class="form-control" value="http://" size="50">
-              </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-2">
-                <button type="button" class="btn btn-primary">Agregar</button>
-            </div>
-            <div class="col-2">
-                <button type="button" class="btn btn-primary">Cancelar</button>
-            </div>
-        </div>
-      </form>
-
     <div class="row" id="tecnologias">
         <div *ngFor="let tecnologia of tecnologiaLista">
-            <div class="col-1 text-center" id="foto"> 
+            <div class="col-lg-1 text-center float-start"> 
                 <h5>{{tecnologia.nombre}}</h5>
                 <img class="rounded" 
                 [src]="tecnologia.logo"
@@ -47,5 +20,7 @@
                 <p> </p>
             </div>
         </div>
+
     </div>
+        
 </div>

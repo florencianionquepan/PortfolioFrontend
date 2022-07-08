@@ -1,20 +1,22 @@
 #div-portada{
     position: relative;
-}
+ }
+
 #div-img-fondo{
-    height: 400px;
-}
+    max-height: 400px;
+} 
+
+#img-portada{
+   height: 400px;
+} 
 
 #acerca-de{
     background-color: transparent;
 }
 #datos{
     text-align: left;
-    margin-top:4%;
 }
-#img-portada{
-    height: 400px;
-}
+
 #div-img-persona{
     position: relative;
     bottom:50px;
@@ -26,6 +28,7 @@
 
 #cambiar-portada{
     position: absolute;
+    z-index: 2;
     bottom: 90%;
     left: 90%;
 }
