@@ -1,11 +1,11 @@
 <div class="text-center background">
-  <div class="navbar navbar-dark">
-    <div class="navbar-brand my-0">
+  <div class="navbar navbar-dark d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
+    <div class="navbar-brand my-0 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       <img class="mx-3 rounded"
         src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1"
         style="width:200px;">
     </div>
-    <div class="nav-link">
+    <div class="nav-link text-end">
       <a onclick="window.open('https://github.com/florencianionquepan','_blank')" style="cursor:pointer; color:#0DCAF0"
         class="links"> Github </a>
       <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')"
@@ -15,18 +15,18 @@
   </div>
 </div>
 
-<div id='div-portada' class="text-center text-white-50 background">
-  <div class="row" id="div-img-fondo">
-    <img [src]="Persona?.urlFondo" class="img rounded img-fluid" id='img-portada' alt="gato">
-    <div class="col-11">
-
+<div id='div-portada' class="text-center text-white-50 background position-relative mx-3">
+  <div class="row mx-auto d-block" id="div-img-fondo">
+    <div class="rounded">
+      <img [src]="Persona?.urlFondo" class="rounded-3 img-fluid" id='img-portada' alt="Imagen de gatito no carga...">
+      <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2 position-absolute top-0 end-0 mx-5" 
+          data-bs-toggle="modal"
+          data-bs-target="#modificarPortadaModal" (click)="onOpenModal('fotoPortada',Persona)" id='cambiar-portada'>
+          <fa-icon [icon]="faCameraRetro"></fa-icon>
+        </button>
     </div>
-    <div class="col-1">
-      <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
-        data-bs-target="#modificarPortadaModal" (click)="onOpenModal('fotoPortada',Persona)" id='cambiar-portada'>
-        <fa-icon [icon]="faCameraRetro"></fa-icon>
-      </button>
-    </div>
+    
+    
 
   </div>
 

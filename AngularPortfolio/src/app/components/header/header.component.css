@@ -1,14 +1,16 @@
-#div-portada{
-    position: relative;
- }
-
-#div-img-fondo{
-    max-height: 400px;
-} 
-
 #img-portada{
-   height: 400px;
+    width: 80%;
+    height: auto;
+    opacity: 0.8;
 } 
+
+@supports(object-fit: cover){
+    #img-portada{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
 
 #acerca-de{
     background-color: transparent;
@@ -24,13 +26,6 @@
 #cambiar-foto{
     margin-top:-5%;
     margin-left: 70%;
-}
-
-#cambiar-portada{
-    position: absolute;
-    z-index: 2;
-    bottom: 90%;
-    left: 90%;
 }
 
 .links{
