@@ -26,7 +26,7 @@ export class AboutComponent{
     this.headerService.verPersona().subscribe({
       next:(response:any)=>{
         this.Persona=response[0];
-        console.log(this.Persona);
+        //console.log(this.Persona);
       },
       error:(error:HttpErrorResponse)=>{
         console.log(error.message);

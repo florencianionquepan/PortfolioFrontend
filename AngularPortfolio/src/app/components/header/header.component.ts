@@ -4,6 +4,7 @@ import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 import { faUserEdit }from '@fortawesome/free-solid-svg-icons';
 import { Persona } from 'src/app/models/persona';
 import { HeaderService } from 'src/app/services/header.service';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -37,25 +38,26 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  public onOpenModal(mode:String,persona?:Persona){
+  public onOpenModal(mode:String,Persona?:Persona){
     const container=document.querySelector('#main-component');
     const button=document.createElement('button');
     button.style.display='none';
     button.setAttribute('data-toggle', 'modal'); 
     if(mode=='fotoPortada'){
-      this.modificarPersona=persona;
+      this.modificarPersona=Persona;
       button.setAttribute('data-toggle', '#modificarPortada');
     }else if(mode=='perfil'){
-      this.modificarPersona=persona;
+      this.modificarPersona=Persona;
       button.setAttribute('data-toggle', '#modificarPerfil');
     }
     container?.appendChild(button);
     button.click;
   }
 
-  public onModificarPersona(persona:Persona){
-    this.modificarPersona=persona;
-    this.headerService.modificarPersona(persona).subscribe({
+  public onModificarPersona(Persona:Persona){
+    this.modificarPersona=Persona;
+    console.log(Persona);
+    this.headerService.modificarPersona(Persona).subscribe({
       next:(response:Persona)=>{
         console.log(response);
         this.verPersona();

@@ -114,7 +114,7 @@ aria-labelledby="modificarEducacionModalLabel" aria-hidden="true">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form #editForm="ngForm">
+        <form #editForm="ngForm" >
           <div class="form-group">
             <label for="nombreUniversidad">Nombre de la Institución</label>
             <input type="text" ngModel="{{modificarEducacion?.nombreUniversidad}}" name="nombreUniversidad" class="form-control" id="nombreUniversidad">
