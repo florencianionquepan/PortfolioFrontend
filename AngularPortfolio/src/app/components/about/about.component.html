@@ -6,9 +6,60 @@
             <p>{{Persona?.sobreMi}}</p>
         </div>
         <div class="col-1">
-            <button class="btn btn-outline-info btn-sm mt-2 d-none d-md-block">
+            <button class="btn btn-outline-info btn-sm mt-2 d-none d-md-block"  data-bs-toggle="modal"
+            data-bs-target="#modificarAcercaModal" (click)="onOpenModal(Persona)">
                 <fa-icon [icon]="faUserEdit"></fa-icon>
             </button>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="modificarAcercaModal" tabindex="-1" aria-labelledby="modificarAcercaModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarPortadaModalLabel"> Editar descripción
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="sobreMi">Acerca de mi:</label>
+            <input type="text" ngModel="{{modificarPersona?.sobreMi}}" name="sobreMi" class="form-control"
+              id="sobreMi">
+          </div>
+          <input type="hidden" ngModel="{{modificarPersona?.idPersona}}" name="idPersona" class="form-control"
+            id="idPersona">
+          <input type="hidden" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control" 
+            id="nombre">
+          <input type="hidden" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
+            id="apellido">
+          <input type="hidden" ngModel="{{modificarPersona?.fechaNac}}" name="fechaNac" class="form-control"
+            id="fechaNac">
+          <input type="hidden" ngModel="{{modificarPersona?.nacionalidad}}" name="nacionalidad" class="form-control"
+            id="nacionalidad">
+          <input type="hidden" ngModel="{{modificarPersona?.ubicacion}}" name="ubicacion" class="form-control"
+            id="ubicacion">
+          <input type="hidden" ngModel="{{modificarPersona?.telefono}}" name="telefono" class="form-control"
+            id="telefono">
+          <input type="hidden" ngModel="{{modificarPersona?.mail}}" name="mail" class="form-control" 
+            id="mail">
+          <input type="hidden" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
+            id="posicion">
+          <input type="hidden" ngModel="{{modificarPersona?.urlFondo}" name="urlFondo" class="form-control" 
+            id="urlFondo">
+          <input type="hidden" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control" id="urlFoto">
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" (click)="onModificarPersona(editForm.value)">Guardar
+              Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

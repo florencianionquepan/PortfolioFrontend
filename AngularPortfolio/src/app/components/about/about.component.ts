@@ -14,7 +14,7 @@ export class AboutComponent{
   faUserEdit = faUserEdit;
 
   public Persona:any | undefined;
-  public editPersona:Persona | undefined;
+  public modificarPersona:Persona | undefined;
 
   constructor (private headerService:HeaderService){}
 
@@ -34,4 +34,27 @@ export class AboutComponent{
     })
   }
 
+  public onOpenModal(Persona?:Persona){
+    const container=document.querySelector('#main-component');
+    const button=document.createElement('button');
+    button.style.display='none';
+    button.setAttribute('data-toggle', 'modal'); 
+    this.modificarPersona=Persona;
+    button.setAttribute('data-toggle', '#modificarAcerca');
+    container?.appendChild(button);
+    button.click;
+  }
+  public onModificarPersona(Persona:Persona){
+    this.modificarPersona=Persona;
+    console.log(Persona);
+    this.headerService.modificarPersona(Persona).subscribe({
+      next:(response:Persona)=>{
+        console.log(response);
+        this.verPersona();
+      },
+      error:(error:HttpErrorResponse)=>{
+        console.log(error.message);
+      }
+    })
+  }
 }
