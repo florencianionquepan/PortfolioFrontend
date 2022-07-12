@@ -1,7 +1,7 @@
 #img-portada{
-    width: 80%;
+    width: 100%;
     height: auto;
-    opacity: 0.8;
+    opacity: 0.2;
 } 
 
 @supports(object-fit: cover){
@@ -14,18 +14,7 @@
 
 #acerca-de{
     background-color: transparent;
-}
-#datos{
-    text-align: left;
-}
-
-#div-img-persona{
-    position: relative;
-    bottom:50px;
-}
-#cambiar-foto{
-    margin-top:-5%;
-    margin-left: 70%;
+    align-content: center;
 }
 
 .links{
