@@ -104,8 +104,8 @@
 
 <div class="modal fade" id="modificarPerfilModal" tabindex="-1" aria-labelledby="modificarPerfilModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content col-10 col-lg-6 col-xl-5 g-3">
       <div class="modal-header">
         <h5 class="modal-title" id="modificarPerfilModalLabel"> Editar Perfi
         </h5>
@@ -113,52 +113,55 @@
       </div>
       <div class="modal-body">
         <form #edit2Form="ngForm">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control"
-              id="nombre">
+          <div class="row">
+            <div class="form-group col-4">
+              <label for="nombre">Nombre</label>
+              <input type="text" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control"
+                id="nombre">
+            </div>
+            <div class="form-group col-4">
+              <label for="apellido">Apellido</label>
+              <input type="text" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
+                id="apellido">
+            </div>
+            <div class="form-group col-4">
+              <label for="fechaNac">Fecha de Nacimiento</label>
+              <input type="text" ngModel="{{modificarPersona?.fechaNac}}" name="fechaNac" class="form-control"
+                id="fechaNac">
+            </div>
+            <div class="form-group col-5 pt-2">
+              <label for="nacionalidad">Nacionalidad</label>
+              <input type="text" ngModel="{{modificarPersona?.nacionalidad}}" name="nacionalidad" class="form-control"
+                id="nacionalidad">
+            </div>
+            <div class="form-group col-5 pt-2">
+              <label for="ubicacion">Ubicacion</label>
+              <input type="text" ngModel="{{modificarPersona?.ubicacion}}" name="ubicacion" class="form-control"
+                id="ubicacion">
+            </div>
+            <div class="form-group col-5 pt-2">
+              <label for="telefono">Telefono</label>
+              <input type="text" ngModel="{{modificarPersona?.telefono}}" name="telefono" class="form-control"
+                id="telefono">
+            </div>
+            <div class="form-group col-5 pt-2">
+              <label for="mail">mail</label>
+              <input type="text" ngModel="{{modificarPersona?.mail}}" name="mail" class="form-control"
+                id="mail">
+            </div>
+            <div class="form-group col-6 pt-2">
+              <label for="posicion">Posición</label>
+              <input type="text" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
+                id="posicion">
+            </div>
+            <div class="form-group col-11 pt-2">
+              <label for="urlFoto">URL de foto de perfil</label>
+              <input type="text" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control"
+                id="urlFoto">
+            </div>
+  
           </div>
-          <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input type="text" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
-              id="apellido">
-          </div>
-          <div class="form-group">
-            <label for="fechaNac">Fecha de Nacimiento</label>
-            <input type="text" ngModel="{{modificarPersona?.fechaNac}}" name="fechaNac" class="form-control"
-              id="fechaNac">
-          </div>
-          <div class="form-group">
-            <label for="nacionalidad">Nacionalidad</label>
-            <input type="text" ngModel="{{modificarPersona?.nacionalidad}}" name="nacionalidad" class="form-control"
-              id="nacionalidad">
-          </div>
-          <div class="form-group">
-            <label for="ubicacion">Ubicacion</label>
-            <input type="text" ngModel="{{modificarPersona?.ubicacion}}" name="ubicacion" class="form-control"
-              id="ubicacion">
-          </div>
-          <div class="form-group">
-            <label for="telefono">Telefono</label>
-            <input type="text" ngModel="{{modificarPersona?.telefono}}" name="telefono" class="form-control"
-              id="telefono">
-          </div>
-          <div class="form-group">
-            <label for="mail">mail</label>
-            <input type="text" ngModel="{{modificarPersona?.mail}}" name="mail" class="form-control"
-              id="mail">
-          </div>
-          <div class="form-group">
-            <label for="urlFoto">URL de foto de perfil</label>
-            <input type="text" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control"
-              id="urlFoto">
-          </div>
-          <div class="form-group">
-            <label for="posicion">Posición</label>
-            <input type="text" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
-              id="posicion">
-          </div>
-
+          
           <input type="hidden" ngModel="{{modificarPersona?.idPersona}}" name="idPersona" class="form-control"
             id="idPersona">
           <input type="hidden" ngModel="{{modificarPersona?.urlFondo}}" name="urlFondo" class="form-control" 
