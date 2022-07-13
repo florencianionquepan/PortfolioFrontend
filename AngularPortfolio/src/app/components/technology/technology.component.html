@@ -4,7 +4,8 @@
             <h2 class="px-1">Tecnologias </h2>
         </div>
         <div class="col-1">
-            <button class="btn btn-outline-info btn-sm d-none d-md-block mt-2" (click)="nueva()">
+            <button class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
+                data-bs-target="#agregarTecnologiaModal" (click)="onOpenModal('agregar')">
                 <fa-icon [icon]="faPlus"></fa-icon>
             </button>
         </div>
@@ -12,15 +13,137 @@
 
     <div class="row" id="tecnologias">
         <div *ngFor="let tecnologia of tecnologiaLista">
-            <div class="col-lg-1 text-center float-start"> 
-                <h5>{{tecnologia.nombre}}</h5>
-                <img class="rounded" 
-                [src]="tecnologia.logo"
-                height="50"/>
-                <p> </p>
+            <div class="col-lg-2 text-center float-start">
+                <div class="row align-items-center justify-content-end pe-2">
+                    <div class="col-3">
+
+                    </div>
+                    <div class="col-6 center-block" style="float:none;">
+                        <h5>{{tecnologia.nombre}}</h5>
+                    </div>
+                    <div class="col-3 text-end ps-0" style="display:flex;">
+                            <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block"
+                            data-bs-toggle="modal" data-bs-target="#modificarTecnologiaModal"
+                            (click)="onOpenModal('modificar',tecnologia)">
+                            <fa-icon [icon]="faPen"></fa-icon>
+                            </button>
+                            <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block"
+                            data-bs-toggle="modal" data-bs-target="#eliminarTecnologiaModal" (click)="onOpenModal('eliminar',tecnologia)">
+                            <fa-icon [icon]="faTrashAlt">
+                            </fa-icon>
+                        </button>
+                    </div>
+                </div>
+                
+                <img class="rounded" [src]="tecnologia.urlLogo" height="50" style="min-height: 50px;"/>
+                <p> Años de experiencia: {{tecnologia.aniosExperiencia}} </p>
+
             </div>
         </div>
 
     </div>
-        
+
+
+</div>
+
+
+<!--AGREGAR TECNOLOGIA-->
+<div class="modal fade" id="agregarTecnologiaModal" tabindex="-1" 
+aria-labelledby="agregarTecnologiaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="agregarTecnologiaModalLabel">Nueva tecnología</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAgregarTecnologia(addForm)">
+          <div class="row justify-content-center g-3 mx-2">
+            <div class="form-group col-4">
+              <label for="nombre">Nombre</label>
+              <input type="text" ngModel name="nombre" class="form-control" id="nombre" placeholder="Ej: Angular" required>
+            </div>
+            <div class="form-group col-8">
+              <label for="aniosExperiencia">Años que lleva desarrollando</label>
+              <input type="text" ngModel name="aniosExperiencia" class="form-control" id="aniosExperiencia" required>
+            </div>
+            <div class="form-group col-12 pb-3">
+              <label for="urlLogo">URL de foto del logo</label>
+              <input type="text" ngModel name="urlLogo" class="form-control" id="urlLogo" placeholder="http://..." required>
+            </div>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid" id="agregar-tecnologia-form" >Agregar Tecnologia</button>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!--MODIFICAR-->
+
+<div class="modal fade" id="modificarTecnologiaModal" tabindex="-1" 
+aria-labelledby="modificarTecnologiaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarTecnologiaModalLabel"> Editar educación en {{modificarTecnologia?.nombre}} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm" >
+          <div class="row justify-content-center g-3 mx-2">
+            <div class="form-group col-4">
+            <label for="nombre">Nombre</label>
+            <input type="text" ngModel="{{modificarTecnologia?.nombre}}" name="nombre" class="form-control" id="nombre">
+          </div>
+          <div class="form-group col-8">
+            <label for="aniosExperiencia">Años que lleva desarrollando</label>
+            <input type="text" ngModel="{{modificarTecnologia?.aniosExperiencia}}" name="aniosExperiencia" class="form-control" id="aniosExperiencia">
+          </div>
+          <div class="form-group col-12 pb-3">
+            <label for="urlLogo">URL de foto del logo</label>
+            <input type="text" ngModel="{{modificarTecnologia?.urlLogo}}" name="urlLogo" class="form-control" id="urlLogo">
+          </div>
+          </div>
+          
+        <input type="hidden" ngModel="{{modificarTecnologia?.idTec}}" name="idTec" class="form-control" id="idTec">
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="onModificarTecnologia(editForm.value)">Guardar Cambios</button>
+      </div>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<!--ELIMINAR-->
+
+<div class="modal fade" id="eliminarTecnologiaModal" tabindex="-1" 
+aria-labelledby="eliminarTecnologiaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarTecnologiaModalLabel"> ¿Esta seguro que quiere eliminar {{eliminarTecnologia?.nombre}}? </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+        <button type="submit" class="btn btn-danger" (click)="onEliminarTecnologia(eliminarTecnologia!.idTec)">SI</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<div *ngIf="tecnologiaLista?.length==0" class="col-11">
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">No se cargaron las tecnologias...</h4>
+  </div>
 </div>
