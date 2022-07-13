@@ -58,7 +58,7 @@
 <!--AGREGAR EDUCACION-->
 <div class="modal fade" id="agregarEducacionModal" tabindex="-1" 
 aria-labelledby="agregarEducacionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="agregarEducacionModalLabel">Nueva educación</h5>
@@ -66,33 +66,33 @@ aria-labelledby="agregarEducacionModalLabel" aria-hidden="true">
       </div>
       <div class="modal-body">
         <form #addForm="ngForm" (ngSubmit)="onAgregarEducacion(addForm)">
-          <div class="form-group">
-            <label for="nombreUniversidad">Nombre de la Institución</label>
-            <input type="text" ngModel name="nombreUniversidad" class="form-control" id="nombreUniversidad" placeholder="Nombre de Universidad" required>
+          <div class="row justify-content-center g-3 mx-3">
+            <div class="form-group col-6">
+              <label for="nombreUniversidad">Nombre de la Institución</label>
+              <input type="text" ngModel name="nombreUniversidad" class="form-control" id="nombreUniversidad" placeholder="Universidad..." required>
+            </div>
+            <div class="form-group col-6">
+              <label for="ubicacion">Ubicación de la Institución</label>
+              <input type="text" ngModel name="ubicacion" class="form-control" id="ubicacion" placeholder="Buenos Aires, Argentina" required>
+            </div>
+            <div class="form-group col-12 pt-2">
+              <label for="titulo">Titulo</label>
+              <input type="text" ngModel name="titulo" class="form-control" id="titulo" placeholder="Ingenieria en Sistemas" required>
+            </div>
+  
+            <div class="form-group col-6 pt-2">
+              <label for="fechaInicio">Fecha de Inicio</label>
+              <input type="text" ngModel name="fechaInicio" class="form-control" id="fechaInicio" placeholder="2020" required>
+            </div>
+            <div class="form-group col-6 pt-2">
+              <label for="fechaFin">Fecha de Finalización</label>
+              <input type="text" ngModel name="fechaFin" class="form-control" id="fechaFin" placeholder="2025" required>
+            </div>
+            <div class="form-group col-12 pb-3">
+              <label for="urlFoto">URL de foto del logo</label>
+              <input type="text" ngModel name="urlFoto" class="form-control" id="urlFoto" placeholder="http://..." required>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="ubicacion">Ubicación de la Institución</label>
-            <input type="text" ngModel name="ubicacion" class="form-control" id="ubicacion" placeholder="Ubicacion de Universidad" required>
-          </div>
-          <div class="form-group">
-            <label for="titulo">Titulo</label>
-            <input type="text" ngModel name="titulo" class="form-control" id="titulo" placeholder="titulo" required>
-          </div>
-
-          <div class="form-group">
-            <label for="fechaInicio">Fecha de Inicio</label>
-            <input type="text" ngModel name="fechaInicio" class="form-control" id="fechaInicio" placeholder="Fecha de Inicio" required>
-          </div>
-          <div class="form-group">
-            <label for="fechaFin">Fecha de Finalización</label>
-            <input type="text" ngModel name="fechaFin" class="form-control" id="fechaFin" placeholder="Fecha de Finalización" required>
-          </div>
-          <div class="form-group">
-            <label for="urlFoto">URL de foto del logo</label>
-            <input type="text" ngModel name="urlFoto" class="form-control" id="urlFoto" placeholder="http://..." required>
-          </div>
-        
-      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary" [disabled]="addForm.invalid" id="agregar-educacion-form" >Agregar educacion</button>
@@ -107,39 +107,42 @@ aria-labelledby="agregarEducacionModalLabel" aria-hidden="true">
 
 <div class="modal fade" id="modificarEducacionModal" tabindex="-1" 
 aria-labelledby="modificarEducacionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modificarEducacionModalLabel"> Editar educación {{modificarEducacion?.titulo}} </h5>
+        <h5 class="modal-title" id="modificarEducacionModalLabel"> Editar educación en {{modificarEducacion?.nombreUniversidad}} </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #editForm="ngForm" >
-          <div class="form-group">
+          <div class="row justify-content-center g-3 mx-3">
+            <div class="form-group col-6">
             <label for="nombreUniversidad">Nombre de la Institución</label>
             <input type="text" ngModel="{{modificarEducacion?.nombreUniversidad}}" name="nombreUniversidad" class="form-control" id="nombreUniversidad">
           </div>
-          <div class="form-group">
+          <div class="form-group col-6">
             <label for="ubicacion">Ubicación de la Institución</label>
             <input type="text" ngModel="{{modificarEducacion?.ubicacion}}" name="ubicacion" class="form-control" id="ubicacion">
           </div>
-          <div class="form-group">
+          <div class="form-group col-12">
             <label for="titulo">Titulo</label>
             <input type="text" ngModel="{{modificarEducacion?.titulo}}" name="titulo" class="form-control" id="titulo">
           </div>
 
-          <div class="form-group">
+          <div class="form-group col-6">
             <label for="fechaInicio">Fecha de Inicio</label>
             <input type="text" ngModel="{{modificarEducacion?.fechaInicio}}" name="fechaInicio" class="form-control" id="fechaInicio">
           </div>
-          <div class="form-group">
+          <div class="form-group col-6">
             <label for="fechaFin">Fecha de Finalización</label>
             <input type="text" ngModel="{{modificarEducacion?.fechaFin}}" name="fechaFin" class="form-control" id="fechaFin">
           </div>
-          <div class="form-group">
+          <div class="form-group col-12 pb-3">
             <label for="urlFoto">URL de foto del logo</label>
             <input type="text" ngModel="{{modificarEducacion?.urlFoto}}" name="urlFoto" class="form-control" id="urlFoto">
           </div>
+          </div>
+          
         <input type="hidden" ngModel="{{modificarEducacion?.idEdu}}" name="idEdu" class="form-control" id="idEdu">
       
       <div class="modal-footer">

@@ -1,5 +1,5 @@
 
-<div class="text-white-50 background my-1">
+<div class="text-white-50 background my-1 position-relative">
     <div class="row">
         <div class="col-11">
             <h2> Acerca de mi </h2>
@@ -16,19 +16,17 @@
 
 <div class="modal fade" id="modificarAcercaModal" tabindex="-1" aria-labelledby="modificarAcercaModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modificarPortadaModalLabel"> Editar descripción
-        </h5>
+        <h5 class="modal-title" id="modificarAcercaModalLabel"> Editar descripción </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form #editForm="ngForm">
           <div class="form-group">
-            <label for="sobreMi">Acerca de mi:</label>
-            <input type="text" ngModel="{{modificarPersona?.sobreMi}}" name="sobreMi" class="form-control"
-              id="sobreMi">
+            <textarea type="text" rows="3" ngModel="{{modificarPersona?.sobreMi}}" name="sobreMi" class="form-control"
+              id="sobreMi"></textarea>
           </div>
           <input type="hidden" ngModel="{{modificarPersona?.idPersona}}" name="idPersona" class="form-control"
             id="idPersona">
@@ -48,14 +46,15 @@
             id="mail">
           <input type="hidden" ngModel="{{modificarPersona?.posicion}}" name="posicion" class="form-control"
             id="posicion">
-          <input type="hidden" ngModel="{{modificarPersona?.urlFondo}" name="urlFondo" class="form-control" 
+          <input type="hidden" ngModel="{{modificarPersona?.urlFondo}}" name="urlFondo" class="form-control" 
             id="urlFondo">
-          <input type="hidden" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control" id="urlFoto">
+          <input type="hidden" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control" 
+            id="urlFoto">
 
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" (click)="onModificarPersona(editForm.value)">Guardar
+            <button type="submit" class="btn btn-primary" (click)="onModificarPersona(editForm.value)"> Guardar
               Cambios</button>
           </div>
         </form>
