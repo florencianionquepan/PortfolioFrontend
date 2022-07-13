@@ -30,15 +30,15 @@
                     <p>{{experiencia.descripcion}}</p>
                 </div>
                 <div class="col-1">
-                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" id="pen" 
+                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" id="pen" style="border:none;"
                     data-bs-toggle="modal" data-bs-target="#modificarExperienciaModal" (click)="onOpenModal('modificar',experiencia)">
                         <fa-icon [icon]="faPen">
                         </fa-icon>
                     </button>
                 </div>
                 <div class="col-1">
-                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
-                    data-bs-target="#eliminarExperienciaModal" (click)="onOpenModal('eliminar',experiencia)">
+                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" style="border:none;"
+                      data-bs-toggle="modal" data-bs-target="#eliminarExperienciaModal" (click)="onOpenModal('eliminar',experiencia)">
                         <fa-icon [icon]="faTrash">
                         </fa-icon>
                     </button>

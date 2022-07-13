@@ -33,7 +33,7 @@
                     <h5>{{educacion.titulo}}</h5>
                 </div>
                 <div class="col-1">
-                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" id="pen" 
+                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" id="pen" style="border:none;"
                             data-bs-toggle="modal" data-bs-target="#modificarEducacionModal" 
                             (click)="onOpenModal('modificar',educacion)">
                         <fa-icon [icon]="faPen">
@@ -41,8 +41,8 @@
                     </button>
                 </div>
                 <div class="col-1">
-                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal" 
-                            data-bs-target="#eliminarEducacionModal" 
+                    <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" style="border:none;"
+                            data-bs-toggle="modal" data-bs-target="#eliminarEducacionModal" 
                             (click)="onOpenModal('eliminar',educacion)">
                         <fa-icon [icon]="faTrash">
                         </fa-icon>
