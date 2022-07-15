@@ -1,7 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AutenticacionService } from 'src/app/services/autenticacion.service';
+import { LoginUsuario } from 'src/app/models/login-usuario';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -9,40 +12,56 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
   styleUrls: ['./iniciar-sesion.component.css']
 })
 export class IniciarSesionComponent implements OnInit {
-  form:FormGroup;
+  isLogged=false;
+  isLogginFail=false;
+  loginUsuario!:LoginUsuario;
+  nombreUsuario!:string;
+  password!: string;
+  roles:string[]=[];
 
-  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) { 
+
+  form:FormGroup; 
+  constructor(private formBuilder:FormBuilder,private tokenService:TokenService, private authService:AuthService, private router:Router){
     this.form=this.formBuilder.group(
       {
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(8)]],
-        deviceInfo:this.formBuilder.group({
-          deviceId:["17867868768"],
-          deviceType:["DEVICE_TYPE_ANDROID"],
-          notificationToken:["67657575eececc34"]
-        })
-
+        Usuario:['',[Validators.required, Validators.minLength(4)]],
+        Password:['',[Validators.required,Validators.minLength(4)]],
       }
-    )
-  }
-  
-  ngOnInit(): void {
+    ) 
   }
 
-  get Email(){
-    return this.form.get('email');
+  get Usuario(){
+    return this.form.get('nombreUsuario');
   }
 
   get Password(){
     return this.form.get('password');
   }
+  
+  ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+      this.isLogginFail=false;
+      this.roles=this.tokenService.getAuthorities();
+    }
+  }
 
-  onEnviar(event:Event){
+  onLogin(event:Event):void{
     event.preventDefault;
-    this.autenticacionService.IniciarSesion(this.form.value).subscribe(data=>{
-      console.log("DATA" + JSON.stringify(data));
-      this.ruta.navigate(['/portfolio']);
-
+    this.loginUsuario=new LoginUsuario(this.nombreUsuario, this.password);
+    this.authService.login(this.loginUsuario).subscribe({
+        next:(data:any)=>{
+          this.isLogged=true;
+          this.isLogginFail=false;
+          this.tokenService.setToken(data.token);
+          this.tokenService.setUserName(data.nombreUsuario);
+          this.roles=data.authorities;
+          this.router.navigate(['/portfolio'])
+        },error:(error:HttpErrorResponse)=>{
+        this.isLogged=false;
+        this.isLogginFail=true;
+        console.log(error);
+      }
     })
   }
 
