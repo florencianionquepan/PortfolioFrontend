@@ -10,7 +10,8 @@
         class="links"> Github </a>
       <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')"
         style="cursor:pointer; color:#0DCAF0" class="links me-3"> LinkedIn </a>
-      <a class="btn btn-outline-info me-3" href="iniciar-sesion">Sign up</a>
+      <a class="btn btn-outline-info me-3" href="iniciar-sesion" *ngIf="!isLogged">Iniciar Sesión</a>
+      <a class="btn btn-outline-info me-3" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</a>
     </div>
   </div>
 </div>

@@ -14,48 +14,42 @@ import { TokenService } from 'src/app/services/token.service';
 export class IniciarSesionComponent implements OnInit {
   isLogged=false;
   isLogginFail=false;
-  loginUsuario!:LoginUsuario;
-  nombreUsuario!:string;
-  password!: string;
   roles:string[]=[];
 
+  loginForm:FormGroup;
 
-  form:FormGroup; 
-  constructor(private formBuilder:FormBuilder,private tokenService:TokenService, private authService:AuthService, private router:Router){
-    this.form=this.formBuilder.group(
+
+  constructor(private formBuilder:FormBuilder, private tokenService:TokenService, private authService:AuthService, private router:Router){
+    this.loginForm=this.formBuilder.group(
       {
-        Usuario:['',[Validators.required, Validators.minLength(4)]],
-        Password:['',[Validators.required,Validators.minLength(4)]],
+        nombreUsuario:['',[Validators.required, Validators.minLength(4)]],
+        password:['',[Validators.required,Validators.minLength(4)]],
       }
     ) 
   }
-
-  get Usuario(){
-    return this.form.get('nombreUsuario');
-  }
-
-  get Password(){
-    return this.form.get('password');
-  }
   
+
+
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged=true;
       this.isLogginFail=false;
       this.roles=this.tokenService.getAuthorities();
+      console.log(this.roles);
     }
   }
 
-  onLogin(event:Event):void{
+  onLogin(event:any):void{
     event.preventDefault;
-    this.loginUsuario=new LoginUsuario(this.nombreUsuario, this.password);
-    this.authService.login(this.loginUsuario).subscribe({
+    this.authService.login(this.loginForm.value).subscribe({
         next:(data:any)=>{
           this.isLogged=true;
           this.isLogginFail=false;
           this.tokenService.setToken(data.token);
           this.tokenService.setUserName(data.nombreUsuario);
+          this.tokenService.setAuthorities(data.authorities);
           this.roles=data.authorities;
+          //console.log(this.roles);
           this.router.navigate(['/portfolio'])
         },error:(error:HttpErrorResponse)=>{
         this.isLogged=false;

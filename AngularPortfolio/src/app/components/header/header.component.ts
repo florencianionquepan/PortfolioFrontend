@@ -5,6 +5,7 @@ import { faUserEdit }from '@fortawesome/free-solid-svg-icons';
 import { Persona } from 'src/app/models/persona';
 import { HeaderService } from 'src/app/services/header.service';
 import { FormsModule }   from '@angular/forms';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,8 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isLogged=false;
+
   faCameraRetro = faCameraRetro;
   faUserEdit = faUserEdit;
   
@@ -20,12 +23,22 @@ export class HeaderComponent implements OnInit {
   miPortfolio:any;
 
 
-  constructor (private headerService:HeaderService){}
+  constructor (private headerService:HeaderService, private tokenService: TokenService){}
 
   ngOnInit(): void {
     this.verPersona();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
   }
 
+  public onLogOut():void{
+    this.tokenService.logOut();
+    window.location.reload();
+  }
+  
   public verPersona():void{
     this.headerService.verPersona().subscribe({
       next:(response:any)=>{
