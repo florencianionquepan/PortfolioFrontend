@@ -28,6 +28,13 @@ export class IniciarSesionComponent implements OnInit {
     ) 
   }
   
+  get Usuario(){
+    return this.loginForm.get('nombreUsuario');
+  }
+
+  get Password(){
+    return this.loginForm.get('password');
+  }
 
 
   ngOnInit(): void {
