@@ -23,7 +23,7 @@ export class IniciarSesionComponent implements OnInit {
     this.loginForm=this.formBuilder.group(
       {
         nombreUsuario:['',[Validators.required, Validators.minLength(4)]],
-        password:['',[Validators.required,Validators.minLength(4)]],
+        password:['',[Validators.required,Validators.minLength(8)]],
       }
     ) 
   }
@@ -42,7 +42,6 @@ export class IniciarSesionComponent implements OnInit {
       this.isLogged=true;
       this.isLogginFail=false;
       this.roles=this.tokenService.getAuthorities();
-      console.log(this.roles);
     }
   }
 

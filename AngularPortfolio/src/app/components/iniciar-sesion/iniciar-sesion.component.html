@@ -12,6 +12,9 @@
             <p *ngIf="Usuario?.hasError('required')" class="text-danger">
               El Usuario es requerido.
             </p>
+            <p *ngIf="Usuario?.errors?.['minlength']" class="text-danger">
+              El Usuario es inválido.
+            </p>
           </div>
         </div>
           <div class="mb-3 px-5">
@@ -22,6 +25,9 @@
              <div *ngIf="Password?.errors && Password?.touched">
               <p *ngIf="Password?.hasError('required')" class="text-danger">
                 La contraseña es requerida.
+              </p>
+              <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+                La contraseña es inválida.
               </p>
             </div> 
     
