@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { faUserEdit }from '@fortawesome/free-solid-svg-icons';
 import { Persona } from 'src/app/models/persona';
 import { HeaderService } from 'src/app/services/header.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-about',
@@ -13,13 +14,20 @@ import { HeaderService } from 'src/app/services/header.service';
 export class AboutComponent{
   faUserEdit = faUserEdit;
 
+  isLogged=false;
+
   public Persona:any | undefined;
   public modificarPersona:Persona | undefined;
 
-  constructor (private headerService:HeaderService){}
+  constructor (private headerService:HeaderService, private tokenService:TokenService){}
 
   ngOnInit(): void {
     this.verPersona();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
   }
 
   public verPersona():void{

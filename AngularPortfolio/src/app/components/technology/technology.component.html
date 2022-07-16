@@ -6,7 +6,7 @@
         </div>
         <div class="col-1 float-end">
             <button class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
-                data-bs-target="#agregarTecnologiaModal" (click)="onOpenModal('agregar')">
+                data-bs-target="#agregarTecnologiaModal" (click)="onOpenModal('agregar')" *ngIf="isLogged">
                 <fa-icon [icon]="faPlus"></fa-icon>
             </button>
         </div>
@@ -26,11 +26,11 @@
                     <div class="col-3 text-end ps-0" style="display:flex;">
                             <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block" style="border:none;"
                             data-bs-toggle="modal" data-bs-target="#modificarTecnologiaModal"
-                            (click)="onOpenModal('modificar',tecnologia)">
+                            (click)="onOpenModal('modificar',tecnologia)" *ngIf="isLogged">
                             <fa-icon [icon]="faPen"></fa-icon>
                             </button>
                             <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block" style="border:none;"
-                            data-bs-toggle="modal" data-bs-target="#eliminarTecnologiaModal" (click)="onOpenModal('eliminar',tecnologia)">
+                            data-bs-toggle="modal" data-bs-target="#eliminarTecnologiaModal" (click)="onOpenModal('eliminar',tecnologia)" *ngIf="isLogged">
                             <fa-icon [icon]="faTrashAlt">
                             </fa-icon>
                         </button>

@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
 
   public onModificarPersona(Persona:Persona){
     this.modificarPersona=Persona;
-    console.log(Persona);
+    //console.log(Persona);
     this.headerService.modificarPersona(Persona).subscribe({
       next:(response:Persona)=>{
         console.log(response);

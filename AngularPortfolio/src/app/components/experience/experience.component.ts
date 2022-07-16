@@ -4,6 +4,7 @@ import { ExperienceService } from 'src/app/services/experience.service';
 import { Experiencia } from 'src/app/models/experiencia';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-experience',
@@ -16,14 +17,21 @@ export class ExperienceComponent implements OnInit {
   faPen=faPen;
   faTrash= faTrashAlt;
 
+  isLogged=false;
+
   public experienciaLista:Experiencia[]=[];
   public modificarExperiencia:Experiencia | undefined;
   public eliminarExperiencia:Experiencia | undefined;
 
-  constructor(private experienciaService:ExperienceService) { }
+  constructor(private experienciaService:ExperienceService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.verExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
   }
   
   

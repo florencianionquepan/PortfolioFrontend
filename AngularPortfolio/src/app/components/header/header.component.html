@@ -22,7 +22,7 @@
       <img [src]="Persona?.urlFondo" class="rounded-3 img-fluid" id='img-portada' alt="Imagen de gatito no carga...">
       <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2 position-absolute top-0 end-0 mx-5" 
           data-bs-toggle="modal"
-          data-bs-target="#modificarPortadaModal" (click)="onOpenModal('fotoPortada',Persona)" id='cambiar-portada'>
+          data-bs-target="#modificarPortadaModal" (click)="onOpenModal('fotoPortada',Persona)" id='cambiar-portada' *ngIf="isLogged">
           <fa-icon [icon]="faCameraRetro"></fa-icon>
         </button>
     </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="col-lg-1 pb-5 position-absolute top-50 end-0 translate-middle-y">
       <button type='button' class="btn btn-outline-info btn-sm d-none d-lg-block mt-2" data-bs-toggle="modal"
-        data-bs-target="#modificarPerfilModal" (click)="onOpenModal('perfil', Persona)">
+        data-bs-target="#modificarPerfilModal" (click)="onOpenModal('perfil', Persona)" *ngIf="isLogged">
         <fa-icon [icon]="faUserEdit"></fa-icon>
       </button>
     </div>

@@ -4,6 +4,7 @@ import { Tecnologia } from 'src/app/models/tecnologia';
 import { TechnologyService } from 'src/app/services/technology.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-technology',
@@ -16,14 +17,21 @@ export class TechnologyComponent implements OnInit {
   faPen = faPen;
   faTrashAlt= faTrashAlt;
 
+  isLogged=false;
+
   public tecnologiaLista:Tecnologia[]=[];
   public modificarTecnologia:Tecnologia | undefined;
   public eliminarTecnologia:Tecnologia | undefined;
 
-  constructor(private technologyService: TechnologyService ) { }
+  constructor(private technologyService: TechnologyService,private tokenService:TokenService ) { }
 
   ngOnInit(): void {
     this.verTecnologia();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
   }
 
   public verTecnologia():void{

@@ -5,6 +5,7 @@ import { EducationService } from 'src/app/services/education.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-education',
@@ -13,19 +14,25 @@ import { FormsModule }   from '@angular/forms';
 })
 export class EducationComponent implements OnInit {
 
-
   faPlus = faPlus;
   faPen=faPen;
   faTrash= faTrashAlt;
+
+  isLogged=false;
 
   public educacionLista:Educacion[]=[];
   public modificarEducacion:Educacion | undefined;
   public eliminarEducacion:Educacion | undefined;
 
-  constructor(private educationService:EducationService) { }
+  constructor(private educationService:EducationService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.verEducacion();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged=false;
+    }
   }
 
   public verEducacion():void{
