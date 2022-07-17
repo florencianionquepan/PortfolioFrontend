@@ -16,8 +16,12 @@
 #acerca-de{
     background-color: transparent;
     align-content: center;
+    width: 100%;
 }
 
+#acerca-de p{
+    font-size: calc(0.9rem + 0.6vw);
+}
 .links{
     padding: 0.75rem;
     border: 1px solid transparent;

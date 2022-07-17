@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="background position-relative" style="color:#a5b9e8; font-size:7vh;" >
+<div class="background position-relative justify-content-center" style="color:#a5b9e8;" >
   <div class="row mx-auto d-block rounded">
     <div class="rounded">
       <img [src]="Persona?.urlFondo" class="rounded-3 img-fluid" id='img-portada' alt="Imagen de gatito no carga...">
@@ -28,19 +28,19 @@
     </div>
   </div>
 
-  <div id='acerca-de' class="row">
-    <div class="col-2 col-lg-3 ms-4 position-absolute top-50 start-0 translate-middle-y">
-      <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded float-end" style="filter:grayscale(0.7)">
+  <div id='acerca-de' class="row position-absolute top-50 start-0 translate-middle-y justify-content-center align-items-center">
+    <div class="col-2 col-lg-3 text-center text-lg-end d-none d-md-block">
+      <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded" style="filter:grayscale(0.7)">
     </div>
-    <div class="col-12 col-lg-7 ms-5 ps-5 position-absolute top-50 start-50 translate-middle">
-      <h2 class="display-6">Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
-      <h5>Actualmente estoy en busqueda activa para la posición {{Persona?.posicion}}</h5>
-      <h5>Vivo en {{Persona?.ubicacion}}</h5>
-      <h5>Mi telefono es {{Persona?.telefono}}</h5>
-      <h5>Mi mail es {{Persona?.mail}}</h5>
+    <div class="col-12 col-md-11 col-lg-8 text-center text-md-start ps-4">
+      <h2 class="display-5">Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
+      <p class="mb-0">Me encuentro en busqueda laboral activa como {{Persona?.posicion}}</p>
+      <p class="mb-0">Vivo en {{Persona?.ubicacion}}</p>
+      <p class="mb-0">Mi telefono es {{Persona?.telefono}}</p>
+      <p class="mb-0">Mi mail es {{Persona?.mail}}</p>
     </div>
-    <div class="col-lg-1 pb-5 position-absolute top-50 end-0 translate-middle-y">
-      <button type='button' class="btn btn-outline-info btn-sm d-none d-lg-block mt-2" style="border:none;"
+    <div class="col-1 pb-5">
+      <button type='button' class="btn btn-outline-info btn-sm d-none d-md-block mt-2" style="border:none;"
         data-bs-toggle="modal"
         data-bs-target="#modificarPerfilModal" (click)="onOpenModal('perfil', Persona)" *ngIf="isLogged">
         <fa-icon [icon]="faUserEdit"></fa-icon>
