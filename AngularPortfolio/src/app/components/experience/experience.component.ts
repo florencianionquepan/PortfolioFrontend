@@ -84,7 +84,7 @@ export class ExperienceComponent implements OnInit {
     this.modificarExperiencia=experiencia;
     this.experienciaService.modificarExperiencia(experiencia).subscribe({
       next:(response:Experiencia)=>{
-        console.log(response);
+        //console.log(response);
         this.verExperiencia();
       },
       error:(error:HttpErrorResponse)=>{
@@ -96,7 +96,7 @@ export class ExperienceComponent implements OnInit {
   public onEliminarExperiencia(idExp:number):void{
     this.experienciaService.borrarExperiencia(idExp).subscribe({
       next:(response:void)=>{
-        console.log(response);
+        //console.log(response);
         this.verExperiencia();
       },
       error:(error:HttpErrorResponse)=>{

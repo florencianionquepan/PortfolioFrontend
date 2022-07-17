@@ -43,10 +43,10 @@ export class HeaderComponent implements OnInit {
     this.headerService.verPersona().subscribe({
       next:(response:any)=>{
         this.Persona=response[0];
-        //console.log(this.Persona);
       },
       error:(error:HttpErrorResponse)=>{
         console.log(error.message);
+        console.log(this.Persona);
       }
     })
   }
@@ -69,10 +69,10 @@ export class HeaderComponent implements OnInit {
 
   public onModificarPersona(Persona:Persona){
     this.modificarPersona=Persona;
-    //console.log(Persona);
+    //
     this.headerService.modificarPersona(Persona).subscribe({
       next:(response:Persona)=>{
-        console.log(response);
+        //console.log(response);
         this.verPersona();
       },
       error:(error:HttpErrorResponse)=>{

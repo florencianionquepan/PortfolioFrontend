@@ -68,7 +68,7 @@ export class TechnologyComponent implements OnInit {
     document.getElementById('agregar-tecnologia-form')?.click();
     this.technologyService.agregarTecnologia(addForm.value).subscribe({
       next:(response:Tecnologia)=>{
-        console.log(response);
+        //console.log(response);
         this.verTecnologia();
         addForm.reset();
       },
@@ -83,7 +83,7 @@ export class TechnologyComponent implements OnInit {
     this.modificarTecnologia=tecnologia;
     this.technologyService.modificarTecnologia(tecnologia).subscribe({
       next:(response:Tecnologia)=>{
-        console.log(response);
+        //console.log(response);
         this.verTecnologia();
       },
       error:(error:HttpErrorResponse)=>{
@@ -95,7 +95,7 @@ export class TechnologyComponent implements OnInit {
   public onEliminarTecnologia(idTec:number):void{
     this.technologyService.borrarTecnologia(idTec).subscribe({
       next:(response:void)=>{
-        console.log(response);
+        //console.log(response);
         this.verTecnologia();
       },
       error:(error:HttpErrorResponse)=>{

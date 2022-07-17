@@ -17,7 +17,7 @@ export class IniciarSesionComponent implements OnInit {
   roles:string[]=[];
 
   loginForm:FormGroup;
-
+  cuentaNoExiste=false;
 
   constructor(private formBuilder:FormBuilder, private tokenService:TokenService, private authService:AuthService, private router:Router){
     this.loginForm=this.formBuilder.group(
@@ -61,6 +61,7 @@ export class IniciarSesionComponent implements OnInit {
         this.isLogged=false;
         this.isLogginFail=true;
         console.log(error);
+        this.cuentaNoExiste=true;
       }
     })
   }

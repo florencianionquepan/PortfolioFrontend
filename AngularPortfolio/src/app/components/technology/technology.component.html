@@ -1,7 +1,7 @@
 <div class="text-white-50 background overflow-hidden">
 
     <div class="row">
-        <div class="col-11">
+        <div class="col-md-11 text-center text-md-start">
             <h2 class="px-1">Tecnologias </h2>
         </div>
         <div class="col-1 float-end">
@@ -13,9 +13,9 @@
     </div>
 
     
-      <div class="row pe-5" id="tecnologias">
+      <div class="row justify-content-center" id="tecnologias">
         <div *ngFor="let tecnologia of tecnologiaLista">
-            <div class="col-lg-2 text-center float-start mb-2">
+            <div class="col-lg-2 text-center float-start mb-2 px-1">
                 <div class="row align-items-center justify-content-end pe-2">
                     <div class="col-3">
 
@@ -38,7 +38,7 @@
                 </div>
                 
                 <img class="rounded" [src]="tecnologia.urlLogo" height="50" style="min-height: 50px;"/>
-                <p> Años de experiencia: {{tecnologia.aniosExperiencia}} </p>
+                <p class="text-center"> Años de experiencia: {{tecnologia.aniosExperiencia}} </p>
 
             </div>
         </div>
@@ -145,6 +145,6 @@ aria-labelledby="eliminarTecnologiaModalLabel" aria-hidden="true">
 
 <div *ngIf="tecnologiaLista?.length==0" class="col-11">
   <div class="alert alert-info" role="alert">
-    <h4 class="alert-heading">No se cargaron las tecnologias...</h4>
+    <h4 class="alert-heading">Cargando tecnologias...</h4>
   </div>
 </div>

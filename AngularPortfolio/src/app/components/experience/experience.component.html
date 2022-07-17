@@ -1,7 +1,7 @@
 
 <div class="text-white-50 background py-2">
     <div class="row">
-        <div class="col-11">
+        <div class="col-md-11 text-center text-md-start">
             <h2> Experiencia Laboral</h2>
         </div>
         <div class="col-1">
@@ -16,15 +16,15 @@
 
     <div class="row">
         <div *ngFor="let experiencia of experienciaLista">
-            <div class='row'>
-                <div class="col-2 text-center" id="foto"> 
+            <div class='row align-items-center'>
+                <div class="col-lg-2 text-center pt-2" id="foto"> 
                     <img class="rounded" 
                     [src]="experiencia.urlFoto"
                     width ="100"/>
                     <p> {{experiencia.fechaInicio}}-{{experiencia.fechaFin}}</p>
                 </div>
 
-                <div class="col-8"> 
+                <div class="col-md-10 col-lg-8 text-center text-md-start"> 
                     <h3>{{experiencia.posicion}}</h3>
                     <h4>{{experiencia.nombreEmpresa}}</h4>
                     <p>{{experiencia.descripcion}}</p>
@@ -174,6 +174,6 @@ aria-labelledby="eliminarExperienciaModalLabel" aria-hidden="true">
 
 <div *ngIf="experienciaLista?.length==0" class="col-11 pb-2">
   <div class="alert alert-info" role="alert">
-    <h4 class="alert-heading">No existen Experiencias para mostrar</h4>
+    <h4 class="alert-heading">Cargando experiencias...</h4>
   </div>
 </div> 

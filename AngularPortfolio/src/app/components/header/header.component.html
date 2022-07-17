@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="text-white-50 background position-relative" style="color:#a5b9e8">
+<div class="background position-relative" style="color:#a5b9e8; font-size:7vh;" >
   <div class="row mx-auto d-block rounded">
     <div class="rounded">
       <img [src]="Persona?.urlFondo" class="rounded-3 img-fluid" id='img-portada' alt="Imagen de gatito no carga...">
@@ -29,11 +29,11 @@
   </div>
 
   <div id='acerca-de' class="row">
-    <div class="col-3 ms-4 position-absolute top-50 start-0 translate-middle-y">
+    <div class="col-2 col-lg-3 ms-4 position-absolute top-50 start-0 translate-middle-y">
       <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded float-end" style="filter:grayscale(0.7)">
     </div>
-    <div class="col-10 col-lg-7 ms-5 ps-5 position-absolute top-50 start-50 translate-middle">
-      <h2>Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
+    <div class="col-12 col-lg-7 ms-5 ps-5 position-absolute top-50 start-50 translate-middle">
+      <h2 class="display-6">Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
       <h5>Actualmente estoy en busqueda activa para la posición {{Persona?.posicion}}</h5>
       <h5>Vivo en {{Persona?.ubicacion}}</h5>
       <h5>Mi telefono es {{Persona?.telefono}}</h5>
@@ -46,6 +46,13 @@
       </button>
     </div>
   </div>
+
+  <div *ngIf="Persona==undefined" class="col-8 pb-2 position-absolute top-50 start-50 translate-middle">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">Cargando persona...</h4>
+    </div>
+  </div>
+
 </div>
 
 <!--MODIFICAR PORTADA-->
@@ -180,3 +187,4 @@
     </div>
   </div>
 </div>
+
