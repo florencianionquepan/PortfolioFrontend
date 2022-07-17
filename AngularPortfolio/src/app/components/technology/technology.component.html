@@ -5,7 +5,8 @@
             <h2 class="px-1">Tecnologias </h2>
         </div>
         <div class="col-1 float-end">
-            <button class="btn btn-outline-info btn-sm d-none d-md-block mt-2" data-bs-toggle="modal"
+            <button class="btn btn-outline-info d-none d-md-block mt-2" data-bs-toggle="modal"
+                style="border:none;"
                 data-bs-target="#agregarTecnologiaModal" (click)="onOpenModal('agregar')" *ngIf="isLogged">
                 <fa-icon [icon]="faPlus"></fa-icon>
             </button>

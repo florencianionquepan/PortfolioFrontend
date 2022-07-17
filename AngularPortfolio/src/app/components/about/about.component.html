@@ -6,7 +6,8 @@
             <p>{{Persona?.sobreMi}}</p>
         </div>
         <div class="col-1">
-            <button class="btn btn-outline-info btn-sm mt-2 d-none d-md-block"  data-bs-toggle="modal"
+            <button class="btn btn-outline-info btn-sm mt-2 d-none d-md-block"  style="border:none;" 
+            data-bs-toggle="modal"
             data-bs-target="#modificarAcercaModal" (click)="onOpenModal(Persona)" *ngIf="isLogged">
                 <fa-icon [icon]="faUserEdit"></fa-icon>
             </button>
