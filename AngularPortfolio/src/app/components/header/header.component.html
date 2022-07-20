@@ -5,13 +5,15 @@
         src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1"
         style="width:200px;">
     </div>
-    <div class="nav-link text-end">
+    <div class="nav-link mb-2">
       <a onclick="window.open('../../assets/data/CV_ÑonquepanFlorencia.pdf','_blank')"
         style="cursor:pointer; color:#0DCAF0" class="links"> CV </a>
       <a onclick="window.open('https://github.com/florencianionquepan','_blank')" style="cursor:pointer; color:#0DCAF0"
         class="links"> Github </a>
       <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')"
         style="cursor:pointer; color:#0DCAF0" class="links me-3"> LinkedIn </a>
+    </div>
+    <div class="text-end">
       <a class="btn btn-outline-info me-3" href="iniciar-sesion" *ngIf="!isLogged">Iniciar Sesión</a>
       <a class="btn btn-outline-info me-3" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesión</a>
     </div>
