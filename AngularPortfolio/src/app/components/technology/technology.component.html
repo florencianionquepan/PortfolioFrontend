@@ -15,8 +15,7 @@
 
     
       <div class="row justify-content-center" id="tecnologias">
-        <div *ngFor="let tecnologia of tecnologiaLista">
-            <div class="col-lg-2 text-center float-start mb-2 px-1">
+        <div *ngFor="let tecnologia of tecnologiaLista" class="col-md-3 col-lg-2 text-center float-start mb-2 px-1">
                 <div class="row align-items-center justify-content-end pe-2">
                     <div class="col-3">
 
@@ -40,8 +39,6 @@
                 
                 <img class="rounded" [src]="tecnologia.urlLogo" height="50" style="min-height: 50px;"/>
                 <p class="text-center"> Años de experiencia: {{tecnologia.aniosExperiencia}} </p>
-
-            </div>
         </div>
       </div>
   
@@ -145,7 +142,7 @@ aria-labelledby="eliminarTecnologiaModalLabel" aria-hidden="true">
 </div>
 
 <div *ngIf="tecnologiaLista?.length==0" class="col-11">
-  <div class="alert alert-info" role="alert">
+  <div class="alert alert-info ps-1" role="alert">
     <h4 class="alert-heading">Cargando tecnologias...</h4>
   </div>
 </div>
