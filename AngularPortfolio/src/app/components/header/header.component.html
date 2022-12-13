@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="background position-relative justify-content-center" style="color:#a5b9e8;" >
+<div *ngIf="Persona!=undefined" class="background position-relative justify-content-center" style="color:#a5b9e8;" >
   <div class="row mx-auto d-block rounded">
     <div class="rounded">
       <img [src]="Persona?.urlFondo" class="rounded-3 img-fluid" id='img-portada' alt="Imagen de gatito no carga...">
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div id='acerca-de' class="row position-absolute top-50 start-0 translate-middle-y justify-content-center align-items-center">
+  <div *ngIf="Persona!=undefined" id='acerca-de' class="row position-absolute top-50 start-0 translate-middle-y justify-content-center align-items-center">
     <div class="col-2 col-lg-3 text-center text-lg-end d-none d-md-block">
       <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded" style="filter:grayscale(0.7)">
     </div>
@@ -40,7 +40,6 @@
       <h2 class="display-5">Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
       <p class="mb-0">Me encuentro en busqueda laboral activa como {{Persona?.posicion}}</p>
       <p class="mb-0">Vivo en {{Persona?.ubicacion}}</p>
-      <p class="mb-0">Mi telefono es {{Persona?.telefono}}</p>
       <p class="mb-0">Mi mail es {{Persona?.mail}}</p>
     </div>
     <div class="col-1 pb-5">
@@ -52,10 +51,8 @@
     </div>
   </div>
 
-  <div *ngIf="Persona==undefined" class="col-8 pb-2 position-absolute top-50 start-50 translate-middle">
-    <div class="alert alert-info" role="alert">
-      <h4 class="alert-heading">Cargando persona...</h4>
-    </div>
+  <div *ngIf="Persona==undefined" class="position-absolute top-50 start-50 translate-middle">
+    <div class="loader"></div>
   </div>
 
 </div>
