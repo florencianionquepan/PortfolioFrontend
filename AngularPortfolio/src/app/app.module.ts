@@ -15,6 +15,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TechnologyComponent } from './components/technology/technology.component';
 import { FormsModule } from '@angular/forms';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     ProjectsComponent,
     IniciarSesionComponent,
     PortfolioComponent,
-    TechnologyComponent
+    TechnologyComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
