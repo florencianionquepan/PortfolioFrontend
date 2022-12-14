@@ -1,9 +1,7 @@
 <div class="text-center background">
   <div class="navbar navbar-dark d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start ">
     <div class="navbar-brand my-0 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-      <img class="mx-3 rounded"
-        src="https://i0.wp.com/diario-nco.com/wp-content/uploads/2021/09/Argentina-Programa-FUENTE-www.argentina.gob_.png?resize=768%2C164&ssl=1"
-        style="width:200px;">
+      
     </div>
     <div class="nav-link mb-2">
       <a onclick="window.open('../../assets/data/CV_ÑonquepanFlorencia.pdf','_blank')"
@@ -32,15 +30,14 @@
     </div>
   </div>
 
-  <div *ngIf="Persona!=undefined" id='acerca-de' class="row position-absolute top-50 start-0 translate-middle-y justify-content-center align-items-center">
-    <div class="col-1 col-lg-2 text-center text-lg-end d-none d-md-block">
-      <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded" style="filter:grayscale(0.7)">
+  <div *ngIf="Persona!=undefined" id='acerca-de' class="row position-absolute top-50 start-0 translate-middle-y justify-content-center align-items-center mx-5">
+    <div class="col-12 col-md-7 col-xl-5 text-center text-md-start ps-4">
+      <p class="mb-0 display-2">Hi! My name is </p> 
+      <h2 class="mb-0 display-5">{{Persona?.nombre}} {{Persona?.apellido}}</h2>
+      <p class="mb-0 display-5 text-info">{{Persona?.posicion}}</p>
     </div>
-    <div class="col-12 col-md-11 col-lg-8 text-center text-md-start ps-4">
-      <h2 class="display-5">Hola! Me llamo {{Persona?.nombre}} {{Persona?.apellido}}</h2>
-      <p class="mb-0">Me encuentro en busqueda laboral activa como {{Persona?.posicion}}</p>
-      <p class="mb-0">Vivo en {{Persona?.ubicacion}}</p>
-      <p class="mb-0">Mi mail es {{Persona?.mail}}</p>
+    <div class="col-3 text-center text-lg-end p-3">
+      <img [src]="Persona?.urlFoto" alt="fotoPerfil" class="img-fluid rounded" style="filter:grayscale(0.7)">
     </div>
     <div class="col-1 pb-5">
       <button type='button' class="btn btn-outline-info btn-sm d-none d-md-block mt-2" style="border:none;"
