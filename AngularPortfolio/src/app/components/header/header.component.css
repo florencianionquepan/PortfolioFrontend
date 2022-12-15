@@ -56,12 +56,7 @@ a{
     to{transform: rotate(1turn)}
   }
   
-  
-  body {
-    margin: 0; 
-    display: grid;
-    min-height: 100vh;
-    place-content: center;
-    background-color: #000;
-    background: linear-gradient(45deg,#ccc,#fff);
-  }
+.fondo{
+  background-color: transparent;
+  min-height: 150px;
+}
