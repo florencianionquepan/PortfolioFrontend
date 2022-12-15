@@ -21,7 +21,7 @@
 
                     </div>
                     <div class="col-6 center-block" style="float:none;">
-                        <h5>{{tecnologia.nombre}}</h5>
+                        <h5 class="font-title">{{tecnologia.nombre}}</h5>
                     </div>
                     <div class="col-3 text-end ps-0" style="display:flex;">
                             <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block" style="border:none;"
@@ -38,7 +38,7 @@
                 </div>
                 
                 <img class="rounded" [src]="tecnologia.urlLogo" height="50" style="min-height: 50px;"/>
-                <p class="text-center"> Años de experiencia: {{tecnologia.aniosExperiencia}} </p>
+                <p class="text-center font-title"> Years of experience: {{tecnologia.aniosExperiencia}} </p>
         </div>
       </div>
   
@@ -99,7 +99,7 @@ aria-labelledby="modificarTecnologiaModalLabel" aria-hidden="true">
             <input type="text" ngModel="{{modificarTecnologia?.nombre}}" name="nombre" class="form-control" id="nombre">
           </div>
           <div class="form-group col-8">
-            <label for="aniosExperiencia">Años que lleva desarrollando</label>
+            <label for="aniosExperiencia">Años de experiencia</label>
             <input type="text" ngModel="{{modificarTecnologia?.aniosExperiencia}}" name="aniosExperiencia" class="form-control" id="aniosExperiencia">
           </div>
           <div class="form-group col-12 pb-3">

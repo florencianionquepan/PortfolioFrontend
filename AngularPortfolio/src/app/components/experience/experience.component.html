@@ -16,19 +16,19 @@
 
 
     <div class="row">
-        <div *ngFor="let experiencia of experienciaLista">
+        <div *ngFor="let experiencia of experienciaLista | order">
             <div class='row align-items-center'>
                 <div class="col-lg-2 text-center pt-2" id="foto"> 
                     <img class="rounded" 
                     [src]="experiencia.urlFoto"
                     width ="100"/>
-                    <p> {{experiencia.fechaInicio}}-{{experiencia.fechaFin}}</p>
+                    <p class="font-title"> {{experiencia.fechaInicio}}-{{experiencia.fechaFin}}</p>
                 </div>
 
                 <div class="col-md-10 col-lg-8 text-center text-md-start"> 
-                    <h3>{{experiencia.posicion}}</h3>
-                    <h4>{{experiencia.nombreEmpresa}}</h4>
-                    <p>{{experiencia.descripcion}}</p>
+                    <h4 class="font-title">{{experiencia.posicion}}</h4>
+                    <h5 class="font-title">{{experiencia.nombreEmpresa}}</h5>
+                    <p class="font-title">{{experiencia.descripcion}}</p>
                 </div>
                 <div class="col-1">
                     <button type="button" class="btn btn-outline-info btn-sm d-none d-md-block mt-2" id="pen" style="border:none;"
