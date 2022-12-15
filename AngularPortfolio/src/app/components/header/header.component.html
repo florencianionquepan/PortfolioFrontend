@@ -9,11 +9,11 @@
       <a onclick="window.open('https://github.com/florencianionquepan','_blank')" 
         class="links btn-lg font-title"> Github </a>
       <a onclick="window.open('https://www.linkedin.com/in/florencia-%C3%B1onquepan/','_blank')"
-       class="links me-3 btn-lg font-title"> LinkedIn </a>
+       class="links btn-lg font-title"> LinkedIn </a>
     </div>
     <div class="text-end">
-      <a class="btn btn-lg btn-outline-info me-5 font-title" href="iniciar-sesion" *ngIf="!isLogged">Log in</a>
-      <a class="btn btn-lg btn-outline-info me-5 font-title" (click)="onLogOut()" *ngIf="isLogged">Log out</a>
+      <a class="btn btn-lg btn-outline-info mx-5 font-title" href="iniciar-sesion" *ngIf="!isLogged">Log in</a>
+      <a class="btn btn-lg btn-outline-info mx-5 font-title" (click)="onLogOut()" *ngIf="isLogged">Log out</a>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
   </div>
 
 </div>
-<div *ngIf="Persona==undefined" class="col-1 mx-auto">
+<div *ngIf="Persona==undefined" class="col-3 col-md-1 mx-auto text-center">
     <div class="loader"></div>
 </div>
 
