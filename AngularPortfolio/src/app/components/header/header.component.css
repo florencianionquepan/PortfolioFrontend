@@ -38,7 +38,7 @@ a{
     width: 120px;        /* the size */
     padding: 15px;       /* the border thickness */
     background: #07e8d6; /* the color */
-    
+    margin: 0 auto;
     aspect-ratio: 1;
     border-radius: 50%;
     --_m: 
